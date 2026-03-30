@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects Showcase | Mahmoud Zanoun</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#48d4f3",
+              "surface-container-highest": "#271c53",
+              "error-container": "#a70138",
+              "surface-bright": "#2e225d",
+              "primary-fixed": "#ae8dff",
+              "outline": "#78709b",
+              "tertiary-container": "#f673b7",
+              "surface-variant": "#271c53",
+              "surface-dim": "#0f072e",
+              "tertiary-fixed": "#ff8bc5",
+              "primary-fixed-dim": "#a27cff",
+              "surface-tint": "#ba9eff",
+              "on-tertiary-fixed": "#360021",
+              "secondary-dim": "#40ceed",
+              "background": "#0f072e",
+              "on-primary-fixed-variant": "#370086",
+              "on-secondary-container": "#ecfaff",
+              "primary": "#ba9eff",
+              "on-primary-container": "#2b006e",
+              "on-surface": "#e9e1ff",
+              "secondary-fixed": "#65e1ff",
+              "primary-dim": "#8455ef",
+              "on-secondary": "#004b58",
+              "tertiary": "#ff86c3",
+              "on-tertiary-container": "#4a002f",
+              "secondary-container": "#00687a",
+              "on-background": "#e9e1ff",
+              "inverse-surface": "#fdf8ff",
+              "inverse-on-surface": "#574f79",
+              "on-error": "#490013",
+              "tertiary-fixed-dim": "#f976ba",
+              "error-dim": "#d73357",
+              "on-primary": "#39008c",
+              "on-primary-fixed": "#000000",
+              "surface-container-low": "#140b36",
+              "surface-container-lowest": "#000000",
+              "on-tertiary": "#5f003e",
+              "error": "#ff6e84",
+              "on-tertiary-fixed-variant": "#73004b",
+              "on-secondary-fixed": "#003a45",
+              "secondary": "#53ddfc",
+              "primary-container": "#ae8dff",
+              "surface-container-high": "#211749",
+              "on-secondary-fixed-variant": "#005969",
+              "surface-container": "#1b1140",
+              "surface": "#0f072e",
+              "inverse-primary": "#6e3bd7",
+              "outline-variant": "#4a426b",
+              "on-error-container": "#ffb2b9",
+              "tertiary-dim": "#f271b5",
+              "on-surface-variant": "#aea5d4"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #0f072e;
+        color: #e9e1ff;
+        font-family: 'Inter', sans-serif;
+      }
+      .font-headline { font-family: 'Space Grotesk', sans-serif; }
+      .glass-nav {
+        background: rgba(15, 7, 46, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .project-card-glow:hover {
+        box-shadow: 0 0 20px rgba(186, 158, 255, 0.15);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/30 selection:text-primary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0f072e]/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(186,158,255,0.06)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-[#ba9eff] tracking-tighter font-['Space_Grotesk']">
+                Mahmoud
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] font-bold tracking-tight">
+<a class="text-slate-400 hover:text-white transition-colors hover:text-[#53ddfc] transition-all duration-300 active:scale-95" href="#">Home</a>
+<a class="text-[#ba9eff] border-b-2 border-[#ba9eff] pb-1 hover:text-[#53ddfc] transition-all duration-300 active:scale-95" href="#">Projects</a>
+<a class="text-slate-400 hover:text-white transition-colors hover:text-[#53ddfc] transition-all duration-300 active:scale-95" href="#">Experience</a>
+<a class="text-slate-400 hover:text-white transition-colors hover:text-[#53ddfc] transition-all duration-300 active:scale-95" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:block text-[#ba9eff] font-['Space_Grotesk'] font-bold transition-all duration-300 hover:text-[#53ddfc] active:scale-95">EN</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-bold font-['Space_Grotesk'] active:scale-95 transition-all hover:bg-primary-dim shadow-lg shadow-primary/20">
+                    Download App
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero / Section Header -->
+<header class="mb-20">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Portfolio 2024</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-headline font-bold mb-6 tracking-tight">
+                My <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Recent Work</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl font-body leading-relaxed">
+                A selection of high-impact digital products built with a focus on performance, scalability, and exceptional user experience.
+            </p>
+</header>
+<!-- Bento Grid Projects -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Adepti (Large Featured) -->
+<article class="md:col-span-8 group relative flex flex-col bg-surface-container rounded-xl overflow-hidden project-card-glow transition-all duration-500">
+<div class="relative h-[350px] overflow-hidden">
+<img alt="Adepti Marketplace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern clean dashboard UI with a profile listing and complex search filters in deep navy and purple tones with glowing accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4SSGgJOLClR7DeI2ZbeBgY9gFQEP-XVWMQCqvXtk8yad4ZEtKNJS-dvS6CkTxiZe53FAwAcarPGI6mgx8mUuC-3iO3m9UDRJF2UUWITvByforQO4l8oFKnfE0mFc0fH5utIN8LrAk4p_A7tdcUV8juRYodDemlxHYtE-9m8ZVLIVycB5zfGSKnwOuzQl5XM29sdhEViP9Mv8seuJutawd89kpyyZh-QYLiy28Lm15YJUUMZ1w-DH-shCcXQkoo2rPpXnFROb0_cU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-secondary text-xs font-bold font-label uppercase tracking-wider">React</span>
+<span class="px-3 py-1 rounded-full bg-secondary-container text-secondary text-xs font-bold font-label uppercase tracking-wider">MUI</span>
+<span class="px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant text-xs font-bold font-label uppercase tracking-wider">Redux</span>
+</div>
+<h2 class="text-3xl font-headline font-bold text-primary mb-4">Adepti</h2>
+<p class="text-on-surface-variant font-body mb-6 leading-relaxed">
+                        An internal talent marketplace optimized for enterprise scale. Led the frontend architecture, implementing a comprehensive bilingual (EN/NL) system and sophisticated multi-layered filtering mechanisms for seamless resource discovery.
+                    </p>
+<div class="mt-auto pt-6 flex items-center justify-between border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="language">language</span>
+<span class="text-sm font-label text-on-surface-variant">Enterprise Application</span>
+</div>
+<a class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300" href="#">
+                            View Case Study <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Taheiya (Tall/Secondary) -->
+<article class="md:col-span-4 group relative flex flex-col bg-surface-container rounded-xl overflow-hidden project-card-glow transition-all duration-500">
+<div class="relative h-[450px] overflow-hidden">
+<img alt="Taheiya Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist SaaS interface for accounting with dark mode theme, showing financial charts and RTL Arabic typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI_cNcNwOnMHqra7Ha5r4lWVmUeIbpTh34-_F4KKl_ZlrafJjtUaHiSjaUulShI1AFHhpwX5QGeQPwXUeU2Mo-wbxH9ijlrAWUX3dwf11eKxGKGQBcyDbRa0AGeEZcbdlLIoxG4w3c1ipL5Nta9jpUnPs423qtlLYQRFhHrLDIj_L_H18JlpxjsT-lPPzq-55Oy0jzAgOH0b-t1VCqsAybjbJjstT8aSu9cOhxk-jJzyDr5HlgTXG6wDwbn2xwxFyJuMhxKLg0k7A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-secondary text-xs font-bold font-label uppercase tracking-wider">Next.js</span>
+<span class="px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant text-xs font-bold font-label uppercase tracking-wider">Tailwind</span>
+<span class="px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant text-xs font-bold font-label uppercase tracking-wider">Zustand</span>
+</div>
+<h2 class="text-2xl font-headline font-bold text-secondary mb-3">Taheiya</h2>
+<p class="text-on-surface-variant text-sm font-body mb-6 leading-relaxed">
+                        Comprehensive accountants SaaS platform. Engineered a robust real-time communication system and full RTL support. Pioneered a high-efficiency Figma-to-Code MCP workflow to accelerate delivery cycles.
+                    </p>
+<div class="mt-auto flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="text-xs font-label text-on-surface-variant">Real-time SaaS</span>
+</div>
+</div>
+</article>
+<!-- Science Toonz (Horizontal/Compact) -->
+<article class="md:col-span-12 group relative grid md:grid-cols-2 bg-surface-container rounded-xl overflow-hidden project-card-glow transition-all duration-500">
+<div class="relative h-[300px] md:h-auto overflow-hidden">
+<img alt="Science Toonz" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Educational video platform interface with floating quiz modules and a futuristic AI bot avatar on a dark cosmic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9tjeh_QQ9qGTdApGav2TruCTbMDd2ZDzrCUjNh6L7ezk5vQM2jzyT719PRG-NbyIu5-mfA3bDieByrcftqOPFmMhP-M508g029gilIVyz7O2WscaYmyI5mkT25ihQhI0KtWE-FqoVgeV7-3WYfUrQOGyAkAnBQosT21SIAy1ruFeU0LRAT8YFz75cNFNVSB9Fuilkaa8jJA0CJ3W1XIAsyE2c4QqucTJINn0jpRihi1G-JWfOLgJ6P-pR9bHpnI3cOOw-SIX7nwM"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container/50 to-transparent md:hidden"></div>
+</div>
+<div class="p-8 md:p-12 flex flex-col justify-center">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-secondary text-xs font-bold font-label uppercase tracking-wider">React</span>
+<span class="px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant text-xs font-bold font-label uppercase tracking-wider">Jotai</span>
+<span class="px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-xs font-bold font-label uppercase tracking-wider">AI Integrated</span>
+</div>
+<h2 class="text-3xl font-headline font-bold text-tertiary mb-4">Science Toonz</h2>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed text-lg">
+                        Educational powerhouse combining interactive video lessons with real-time AI assessments. Integrated OpenRouter AI to provide personalized tutoring feedback and dynamic quiz generation based on video content timestamps.
+                    </p>
+<div class="flex flex-wrap gap-6 items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="smart_toy">smart_toy</span>
+<span class="text-sm font-label text-on-surface-variant">OpenRouter AI</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="play_circle">play_circle</span>
+<span class="text-sm font-label text-on-surface-variant">Interactive Media</span>
+</div>
+<div class="ml-auto">
+<button class="bg-surface-bright border border-outline-variant/30 text-primary px-6 py-2 rounded-xl font-bold font-headline hover:bg-primary hover:text-on-primary transition-all duration-300">
+                                Explore Platform
+                            </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- CTA Section -->
+<section class="mt-32 p-12 md:p-20 rounded-xl bg-surface-container-low border border-outline-variant/10 text-center relative overflow-hidden">
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 blur-[120px] rounded-full"></div>
+<h3 class="text-3xl md:text-5xl font-headline font-bold mb-8 relative z-10">Have a <span class="text-secondary">vision</span> in mind?</h3>
+<p class="text-on-surface-variant text-lg max-w-xl mx-auto mb-10 relative z-10">
+                Let's collaborate to build something that pushes the boundaries of the modern web.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold font-headline text-lg hover:shadow-xl hover:shadow-primary/30 active:scale-95 transition-all">
+                    Start a Conversation
+                </button>
+<button class="bg-transparent border border-outline-variant text-on-surface px-8 py-4 rounded-xl font-bold font-headline text-lg hover:bg-surface-container transition-all active:scale-95">
+                    View Resume
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#ba9eff]/10 bg-[#0f072e]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col gap-2">
+<div class="text-lg font-bold text-[#ba9eff] font-headline uppercase tracking-widest">Mahmoud Zanoun</div>
+<div class="text-slate-500 font-['Inter'] text-xs tracking-wide uppercase">© 2024 Mahmoud Zanoun. Built with Precision.</div>
+</div>
+<div class="flex gap-8 font-['Inter'] text-sm tracking-wide uppercase">
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="text-[#53ddfc] font-bold opacity-80 hover:opacity-100" href="#">Source Code</a>
+</div>
+</div>
+</footer>
+</body></html>

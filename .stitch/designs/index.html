@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mahmoud Zanoun | Senior Frontend Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#48d4f3",
+              "surface-container-highest": "#271c53",
+              "error-container": "#a70138",
+              "surface-bright": "#2e225d",
+              "primary-fixed": "#ae8dff",
+              "outline": "#78709b",
+              "tertiary-container": "#f673b7",
+              "surface-variant": "#271c53",
+              "surface-dim": "#0f072e",
+              "tertiary-fixed": "#ff8bc5",
+              "primary-fixed-dim": "#a27cff",
+              "surface-tint": "#ba9eff",
+              "on-tertiary-fixed": "#360021",
+              "secondary-dim": "#40ceed",
+              "background": "#0f072e",
+              "on-primary-fixed-variant": "#370086",
+              "on-secondary-container": "#ecfaff",
+              "primary": "#ba9eff",
+              "on-primary-container": "#2b006e",
+              "on-surface": "#e9e1ff",
+              "secondary-fixed": "#65e1ff",
+              "primary-dim": "#8455ef",
+              "on-secondary": "#004b58",
+              "tertiary": "#ff86c3",
+              "on-tertiary-container": "#4a002f",
+              "secondary-container": "#00687a",
+              "on-background": "#e9e1ff",
+              "inverse-surface": "#fdf8ff",
+              "inverse-on-surface": "#574f79",
+              "on-error": "#490013",
+              "tertiary-fixed-dim": "#f976ba",
+              "error-dim": "#d73357",
+              "on-primary": "#39008c",
+              "on-primary-fixed": "#000000",
+              "surface-container-low": "#140b36",
+              "surface-container-lowest": "#000000",
+              "on-tertiary": "#5f003e",
+              "error": "#ff6e84",
+              "on-tertiary-fixed-variant": "#73004b",
+              "on-secondary-fixed": "#003a45",
+              "secondary": "#53ddfc",
+              "primary-container": "#ae8dff",
+              "surface-container-high": "#211749",
+              "on-secondary-fixed-variant": "#005969",
+              "surface-container": "#1b1140",
+              "surface": "#0f072e",
+              "inverse-primary": "#6e3bd7",
+              "outline-variant": "#4a426b",
+              "on-error-container": "#ffb2b9",
+              "tertiary-dim": "#f271b5",
+              "on-surface-variant": "#aea5d4"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0f072e;
+            color: #e9e1ff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(27, 17, 64, 0.4);
+            backdrop-filter: blur(16px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(186, 158, 255, 0.1) 0%, rgba(15, 7, 46, 0) 70%);
+        }
+        .tech-grid {
+            background-image: radial-gradient(rgba(186, 158, 255, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0f072e]/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(186,158,255,0.06)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-[#ba9eff] tracking-tighter font-['Space_Grotesk']">
+                Mahmoud
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] font-bold tracking-tight">
+<a class="text-[#ba9eff] border-b-2 border-[#ba9eff] pb-1" href="#">Home</a>
+<a class="text-slate-400 hover:text-white transition-colors hover:text-[#53ddfc]" href="#">Projects</a>
+<a class="text-slate-400 hover:text-white transition-colors hover:text-[#53ddfc]" href="#">Experience</a>
+<a class="text-slate-400 hover:text-white transition-colors hover:text-[#53ddfc]" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:block text-slate-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider">EN</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-md font-bold text-sm tracking-tight active:scale-95 transition-all hover:bg-primary-dim shadow-lg shadow-primary/20">
+                    Download App
+                </button>
+</div>
+</div>
+</nav>
+<main class="relative min-h-screen pt-24 tech-grid">
+<!-- Background decorative elements -->
+<div class="absolute inset-0 hero-gradient pointer-events-none"></div>
+<div class="absolute top-1/4 -right-24 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<section class="max-w-7xl mx-auto px-6 py-12 md:py-24 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Hero Content -->
+<div class="lg:col-span-7 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/30 border border-secondary/20 text-secondary text-xs font-bold tracking-widest uppercase">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+                        Available for Innovation
+                    </div>
+<h1 class="text-5xl md:text-7xl font-headline font-bold tracking-tighter leading-[1.1]">
+                        Architecting <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Digital Excellence</span> as a Senior Frontend Developer
+                    </h1>
+<p class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl font-body font-light">
+                        3 years of hands-on experience in building scalable, high-performance web applications. Specialized in <span class="text-on-surface font-semibold">React</span> and <span class="text-on-surface font-semibold">Next.js</span>, integrating <span class="text-on-surface font-semibold">AI tools</span> to push the boundaries of modern user interfaces.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="group flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-md font-bold transition-all hover:translate-y-[-2px] hover:shadow-[0_20px_40px_-15px_rgba(186,158,255,0.4)] active:scale-95">
+                            Explore My Work
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="flex items-center gap-2 border border-outline-variant/30 px-8 py-4 rounded-md font-bold text-on-surface hover:bg-surface-variant/20 transition-all active:scale-95">
+<span class="material-symbols-outlined">description</span>
+                            View Resume
+                        </button>
+</div>
+<!-- Skills Bento-ish Chips -->
+<div class="pt-12 space-y-4">
+<p class="text-xs font-label uppercase tracking-[0.2em] text-outline font-bold">Core Technologies</p>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 px-4 py-2 bg-secondary-container/40 text-secondary rounded-full border border-secondary/10 transition-colors hover:bg-secondary-container/60">
+<span class="text-sm font-bold">React</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-secondary-container/40 text-secondary rounded-full border border-secondary/10 transition-colors hover:bg-secondary-container/60">
+<span class="text-sm font-bold">Next.js</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-variant text-on-surface-variant rounded-full border border-outline-variant/20 transition-colors hover:bg-surface-container-high">
+<span class="text-sm font-bold">TypeScript</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-variant text-on-surface-variant rounded-full border border-outline-variant/20 transition-colors hover:bg-surface-container-high">
+<span class="text-sm font-bold">Tailwind CSS</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-secondary-container/40 text-secondary rounded-full border border-secondary/10 transition-colors hover:bg-secondary-container/60">
+<span class="text-sm font-bold">AI Tools Integration</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-variant text-on-surface-variant rounded-full border border-outline-variant/20 transition-colors hover:bg-surface-container-high">
+<span class="text-sm font-bold">Redux</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual/Interactive Area -->
+<div class="lg:col-span-5 relative">
+<div class="relative w-full aspect-square max-w-[500px] mx-auto">
+<!-- Abstract Tech Visual -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-3xl rotate-6 animate-pulse"></div>
+<div class="absolute inset-0 glass-panel rounded-3xl border border-white/10 overflow-hidden shadow-2xl flex items-center justify-center p-8">
+<div class="w-full h-full relative overflow-hidden rounded-xl bg-surface-container-lowest">
+<img alt="High-tech interface representation" class="w-full h-full object-cover opacity-60" data-alt="futuristic dark holographic user interface with blue and purple neon highlights, glowing lines, and abstract data visualizations in a clean cinematic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdF28KQyTj7Sh7SVwV8qLLkNSUtBUxUvb5evchDMq1M1Lno8u23yTv2uSaJO7dOTNvbr20MTjaJpose81wA4jYV5hv-yxTcdP5Z4_HgrFdIZkQo9nMoKemeWtDDOAnMBXeVBdTSFNmAXoPkYmRm9QVru8L23oBlYIDkHeAAqV9zdCfxPYiYYbxW2xlZ4cfoJjJSoKJjBqDS1_4aYasik3WRp9hfRilpOAqZjnpOq5EjR6bgJFo3odWgvg9max_wk_k5PlIJkKFyGs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<!-- Floating Code Snippet Card -->
+<div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl border border-primary/20 transform hover:-translate-y-1 transition-transform">
+<div class="flex gap-1.5 mb-3">
+<div class="w-2.5 h-2.5 rounded-full bg-error-dim"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-[#f9bc2d]"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-secondary-dim"></div>
+</div>
+<div class="space-y-2 font-mono text-[10px] md:text-xs text-on-surface-variant">
+<div class="flex gap-2"><span class="text-primary">const</span> <span class="text-secondary">developer</span> = {</div>
+<div class="pl-4">name: <span class="text-tertiary">"Mahmoud Zanoun"</span>,</div>
+<div class="pl-4">role: <span class="text-tertiary">"Senior Frontend"</span>,</div>
+<div class="pl-4">experience: <span class="text-tertiary">"3+ Years"</span></div>
+<div>};</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PWA/Install Hint -->
+<div class="mt-8 glass-panel p-4 rounded-xl border border-secondary/10 flex items-center justify-between group cursor-pointer hover:border-secondary/40 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">install_desktop</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Install as Web App</h4>
+<p class="text-xs text-on-surface-variant">Enjoy a seamless offline experience</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">download</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section (Social Proof) -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="space-y-1">
+<p class="text-3xl font-headline font-bold text-primary">3+</p>
+<p class="text-xs font-label text-outline uppercase tracking-widest">Years Experience</p>
+</div>
+<div class="space-y-1">
+<p class="text-3xl font-headline font-bold text-primary">40+</p>
+<p class="text-xs font-label text-outline uppercase tracking-widest">Projects Delivered</p>
+</div>
+<div class="space-y-1">
+<p class="text-3xl font-headline font-bold text-primary">99%</p>
+<p class="text-xs font-label text-outline uppercase tracking-widest">Code Accuracy</p>
+</div>
+<div class="space-y-1">
+<p class="text-3xl font-headline font-bold text-primary">15+</p>
+<p class="text-xs font-label text-outline uppercase tracking-widest">Tech Stack Tools</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#ba9eff]/10 bg-[#0f072e]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-6 max-w-7xl mx-auto">
+<div class="text-lg font-bold text-[#ba9eff] font-headline uppercase">
+                Mahmoud Zanoun
+            </div>
+<div class="flex gap-8 font-['Inter'] text-sm tracking-wide uppercase font-bold">
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors" href="#">Twitter</a>
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors" href="#">Source Code</a>
+</div>
+<div class="text-slate-500 text-sm font-body opacity-80">
+                © 2024 Mahmoud Zanoun. Built with Precision.
+            </div>
+</div>
+</footer>
+</body></html>

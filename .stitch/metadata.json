@@ -1,0 +1,70 @@
+{
+  "name": "projects/3059476050631393059",
+  "projectId": "3059476050631393059",
+  "title": "portfolio",
+  "visibility": "PRIVATE",
+  "designTheme": {
+    "colorMode": "DARK",
+    "font": "SPACE_GROTESK",
+    "roundness": "ROUND_FOUR",
+    "customColor": "#6366F1"
+  },
+  "screens": {
+    "index": {
+      "id": "13b65989d74c4524be1283690ab0f879",
+      "sourceScreen": "projects/3059476050631393059/screens/13b65989d74c4524be1283690ab0f879",
+      "width": 2560,
+      "height": 2424,
+      "deviceType": "DESKTOP"
+    },
+    "index-mobile": {
+      "id": "ee5889ff427f43969fb807449ab08398",
+      "sourceScreen": "projects/3059476050631393059/screens/ee5889ff427f43969fb807449ab08398",
+      "width": 780,
+      "height": 3984,
+      "deviceType": "MOBILE"
+    },
+    "experience": {
+      "id": "7524927507834b37a618657c17d59b95",
+      "sourceScreen": "projects/3059476050631393059/screens/7524927507834b37a618657c17d59b95",
+      "width": 2560,
+      "height": 3574,
+      "deviceType": "DESKTOP"
+    },
+    "experience-mobile": {
+      "id": "8296262caba4472b9959639333781ea9",
+      "sourceScreen": "projects/3059476050631393059/screens/8296262caba4472b9959639333781ea9",
+      "width": 780,
+      "height": 5560,
+      "deviceType": "MOBILE"
+    },
+    "projects": {
+      "id": "44f429b8c73140648dd417355d6fe174",
+      "sourceScreen": "projects/3059476050631393059/screens/44f429b8c73140648dd417355d6fe174",
+      "width": 2560,
+      "height": 5136,
+      "deviceType": "DESKTOP"
+    },
+    "projects-mobile": {
+      "id": "c1dcb131c52e454a932032fc85fc85ac",
+      "sourceScreen": "projects/3059476050631393059/screens/c1dcb131c52e454a932032fc85fc85ac",
+      "width": 780,
+      "height": 6746,
+      "deviceType": "MOBILE"
+    },
+    "contact": {
+      "id": "8876abb5fba54440aac574f0adb1bd87",
+      "sourceScreen": "projects/3059476050631393059/screens/8876abb5fba54440aac574f0adb1bd87",
+      "width": 2560,
+      "height": 4328,
+      "deviceType": "DESKTOP"
+    },
+    "contact-mobile": {
+      "id": "60b36d1129324cb4a03d9e2e00564c44",
+      "sourceScreen": "projects/3059476050631393059/screens/60b36d1129324cb4a03d9e2e00564c44",
+      "width": 780,
+      "height": 6574,
+      "deviceType": "MOBILE"
+    }
+  }
+}

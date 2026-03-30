@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#48d4f3",
+              "surface-container-highest": "#271c53",
+              "error-container": "#a70138",
+              "surface-bright": "#2e225d",
+              "primary-fixed": "#ae8dff",
+              "outline": "#78709b",
+              "tertiary-container": "#f673b7",
+              "surface-variant": "#271c53",
+              "surface-dim": "#0f072e",
+              "tertiary-fixed": "#ff8bc5",
+              "primary-fixed-dim": "#a27cff",
+              "surface-tint": "#ba9eff",
+              "on-tertiary-fixed": "#360021",
+              "secondary-dim": "#40ceed",
+              "background": "#0f072e",
+              "on-primary-fixed-variant": "#370086",
+              "on-secondary-container": "#ecfaff",
+              "primary": "#ba9eff",
+              "on-primary-container": "#2b006e",
+              "on-surface": "#e9e1ff",
+              "secondary-fixed": "#65e1ff",
+              "primary-dim": "#8455ef",
+              "on-secondary": "#004b58",
+              "tertiary": "#ff86c3",
+              "on-tertiary-container": "#4a002f",
+              "secondary-container": "#00687a",
+              "on-background": "#e9e1ff",
+              "inverse-surface": "#fdf8ff",
+              "inverse-on-surface": "#574f79",
+              "on-error": "#490013",
+              "tertiary-fixed-dim": "#f976ba",
+              "error-dim": "#d73357",
+              "on-primary": "#39008c",
+              "on-primary-fixed": "#000000",
+              "surface-container-low": "#140b36",
+              "surface-container-lowest": "#000000",
+              "on-tertiary": "#5f003e",
+              "error": "#ff6e84",
+              "on-tertiary-fixed-variant": "#73004b",
+              "on-secondary-fixed": "#003a45",
+              "secondary": "#53ddfc",
+              "primary-container": "#ae8dff",
+              "surface-container-high": "#211749",
+              "on-secondary-fixed-variant": "#005969",
+              "surface-container": "#1b1140",
+              "surface": "#0f072e",
+              "inverse-primary": "#6e3bd7",
+              "outline-variant": "#4a426b",
+              "on-error-container": "#ffb2b9",
+              "tertiary-dim": "#f271b5",
+              "on-surface-variant": "#aea5d4"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #ba9eff20, #ba9eff, #53ddfc, #ba9eff20);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0f072e]/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(186,158,255,0.06)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-[#ba9eff] tracking-tighter font-headline">
+                Mahmoud
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 hover:text-white transition-colors font-headline font-bold tracking-tight" href="#">Home</a>
+<a class="text-slate-400 hover:text-white transition-colors font-headline font-bold tracking-tight" href="#">Projects</a>
+<a class="text-[#ba9eff] border-b-2 border-[#ba9eff] pb-1 font-headline font-bold tracking-tight" href="#">Experience</a>
+<a class="text-slate-400 hover:text-white transition-colors font-headline font-bold tracking-tight" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#ba9eff] font-headline font-bold tracking-tight hover:text-[#53ddfc] transition-all duration-300 cursor-pointer">EN</span>
+<button class="bg-primary text-on-primary-container px-5 py-2 rounded-xl font-headline font-bold tracking-tight active:scale-95 transition-transform">
+                    Download App
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Section Header -->
+<header class="mb-20 text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Career Path</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-headline font-bold tracking-tighter text-on-surface mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                My Professional Journey
+            </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                A trajectory defined by precision, architecting scalable digital ecosystems and mastering the art of high-performance frontend development.
+            </p>
+</header>
+<!-- Timeline Container -->
+<div class="relative timeline-line">
+<!-- Experience Item: GenTech -->
+<div class="relative pl-16 mb-24 group">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center z-10 border-4 border-background group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary transition-colors" data-icon="work">work</span>
+</div>
+<div class="grid md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-4 lg:col-span-3">
+<span class="text-sm font-label uppercase tracking-widest text-secondary mb-2 block">Present — 2022</span>
+<h3 class="text-2xl font-headline font-bold text-on-surface">Frontend Developer</h3>
+<p class="text-primary-fixed-dim font-medium">GenTech</p>
+</div>
+<div class="md:col-span-8 lg:col-span-9 bg-surface-container-low p-8 rounded-xl border-l-4 border-primary transition-all hover:bg-surface-container">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h4 class="text-on-surface font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+                                    Key Achievements
+                                </h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base mt-1" data-icon="check_circle">check_circle</span>
+<span>Led development of <strong class="text-on-surface">4 production apps</strong> from architectural blueprint to deployment.</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base mt-1" data-icon="check_circle">check_circle</span>
+<span>Architected <strong class="text-on-surface">multi-language support</strong> systems for global market reach.</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base mt-1" data-icon="check_circle">check_circle</span>
+<span>Engineered robust <strong class="text-on-surface">internal component libraries</strong> used across all corporate digital products.</span>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-on-surface font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="psychology">psychology</span>
+                                    Core Competencies
+                                </h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-xs font-label">React</span>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-xs font-label">Next.js</span>
+<span class="px-3 py-1 bg-secondary-container text-secondary rounded-full text-xs font-label">System Design</span>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-xs font-label">Tailwind CSS</span>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-xs font-label">TypeScript</span>
+</div>
+<div class="mt-6">
+<div class="rounded-lg overflow-hidden h-32 relative group/img">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover/img:grayscale-0 group-hover/img:opacity-100 transition-all duration-500" data-alt="Modern dark-themed development environment showing lines of code on multiple monitors with purple and blue ambient glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClddfroE28fBf5Mhp6JHBWNdwbw6fQxTOs-NKTdLu0b6lH5G7aj4AF81ecS7-umEZigwJipXfoTLoMHBTBArHVfItwboOx9DqnoPGaAN8AQVpXh1EaFU9cVF3cgyC9NwJX39NyVY-yl5xJq5xbiFT0Z_zWbp6iz0-B7Kv80Yk96vROD4B1UDogW8IhNARjdfX4DmhFAAaDcc6g--q6RRJJc2wVlP68Paqut_XuXt49_c3ECkfWeI0yKgTPEQCPOjfB1Xb9fqgyan0"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Education Item: ZTM Academy -->
+<div class="relative pl-16 mb-24 group">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center z-10 border-4 border-background group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-on-secondary transition-colors" data-icon="school">school</span>
+</div>
+<div class="grid md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-4 lg:col-span-3">
+<span class="text-sm font-label uppercase tracking-widest text-slate-500 mb-2 block">2021 — 2022</span>
+<h3 class="text-2xl font-headline font-bold text-on-surface">Web Development</h3>
+<p class="text-primary-fixed-dim font-medium">ZTM Academy</p>
+</div>
+<div class="md:col-span-8 lg:col-span-9 bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary transition-all hover:bg-surface-container">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1">
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                                    Advanced immersion into full-stack paradigms, focusing on the <strong class="text-on-surface">MERN stack</strong> and modern UI engineering. Mastered state management, backend integration, and responsive design patterns.
+                                </p>
+<div class="flex items-center gap-4 text-sm text-secondary font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="verified">verified</span> Certification Completed</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="grade">grade</span> Top Tier Graduate</span>
+</div>
+</div>
+<div class="w-full md:w-48 aspect-video bg-surface-bright rounded-lg flex items-center justify-center border border-outline-variant/20 p-4">
+<span class="material-symbols-outlined text-4xl text-secondary/40" data-icon="workspace_premium">workspace_premium</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Education Item: CS50 Harvard -->
+<div class="relative pl-16 group">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center z-10 border-4 border-background group-hover:bg-primary-dim transition-colors">
+<span class="material-symbols-outlined text-primary-dim group-hover:text-white transition-colors" data-icon="history_edu">history_edu</span>
+</div>
+<div class="grid md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-4 lg:col-span-3">
+<span class="text-sm font-label uppercase tracking-widest text-slate-500 mb-2 block">2020 — 2021</span>
+<h3 class="text-2xl font-headline font-bold text-on-surface">Computer Science</h3>
+<p class="text-primary-fixed-dim font-medium">Harvard University (CS50)</p>
+</div>
+<div class="md:col-span-8 lg:col-span-9 bg-surface-container-low p-8 rounded-xl border-l-4 border-primary-dim transition-all hover:bg-surface-container">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2">
+<p class="text-on-surface-variant leading-relaxed">
+                                    Built the fundamental logic foundation. Deep dives into <strong class="text-on-surface">Memory Management, Algorithms, and Data Structures</strong> using C, Python, and SQL. Developed a rigorous approach to problem-solving.
+                                </p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="px-4 py-3 bg-surface-container flex items-center justify-between rounded-lg">
+<span class="text-xs font-label text-on-surface-variant">Complexity</span>
+<span class="text-primary font-bold">O(log n)</span>
+</div>
+<div class="px-4 py-3 bg-surface-container flex items-center justify-between rounded-lg">
+<span class="text-xs font-label text-on-surface-variant">Logic Mastery</span>
+<span class="text-secondary font-bold">100%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Certification Banner -->
+<section class="mt-32 p-10 rounded-2xl bg-gradient-to-br from-surface-container-high to-surface-container-low border border-primary/10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-xl">
+<h2 class="text-3xl font-headline font-bold text-on-surface mb-2">Technical Excellence</h2>
+<p class="text-on-surface-variant">Continuously expanding the horizon with the latest in AI-driven frontend development and reactive systems.</p>
+</div>
+<button class="px-8 py-4 bg-transparent border border-primary/30 text-primary rounded-xl font-headline font-bold tracking-tight hover:bg-primary/10 hover:border-primary transition-all active:scale-95">
+                View All Credentials
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#ba9eff]/10 bg-[#0f072e]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-6 max-w-7xl mx-auto">
+<div class="text-lg font-bold text-[#ba9eff]">Mahmoud Zanoun</div>
+<div class="flex items-center gap-8 font-['Inter'] text-sm tracking-wide uppercase">
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="text-slate-500 hover:text-[#ba9eff] transition-colors opacity-80 hover:opacity-100" href="#">Source Code</a>
+</div>
+<div class="font-['Inter'] text-sm tracking-wide uppercase text-slate-500">
+                © 2024 Mahmoud Zanoun. Built with Precision.
+            </div>
+</div>
+</footer>
+</body></html>
