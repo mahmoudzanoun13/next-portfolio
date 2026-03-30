@@ -1,8 +1,10 @@
 import Hero from "@/components/home/hero";
+import { Section } from "@/components/ui/section";
+import { PORTFOLIO_DATA } from "@/constants/portfolio";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen pt-24 tech-grid overflow-x-hidden">
+    <main className="relative min-h-screen tech-grid overflow-x-hidden">
       {/* Background decorative elements */}
       <div
         className="absolute inset-0 hero-gradient pointer-events-none"
@@ -19,18 +21,10 @@ export default function Home() {
 
       <Hero />
 
-      {/* Stats Section (Social Proof) */}
-      <section
-        className="max-w-7xl mx-auto px-6 py-12"
-        aria-label="Professional Statistics"
-      >
+      {/* Stats Section */}
+      <Section className="py-12" aria-label="Professional Statistics">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8" role="list">
-          {[
-            { label: "Years Experience", value: "3+" },
-            { label: "Projects Delivered", value: "6+" },
-            { label: "Code Accuracy", value: "95%" },
-            { label: "Tech Stack Tools", value: "15+" },
-          ].map((stat) => (
+          {PORTFOLIO_DATA.stats.map((stat) => (
             <div key={stat.label} className="space-y-1" role="listitem">
               <p className="text-3xl font-headline font-bold text-primary">
                 {stat.value}
@@ -41,7 +35,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </Section>
     </main>
   );
 }

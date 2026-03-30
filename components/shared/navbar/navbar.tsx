@@ -4,81 +4,59 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-
-const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/experience", label: "Experience" },
-  { href: "/contact", label: "Contact" },
-];
+import { useState } from "react";
+import { NAV_LINKS } from "@/constants/navigation";
+import { useScroll } from "@/hooks/use-scroll";
+import { useLockScroll } from "@/hooks/use-lock-scroll";
+import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Handle scroll for navbar styling
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Prevent scroll when menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isMenuOpen]);
+  const isScrolled = useScroll();
+  useLockScroll(isMenuOpen);
 
   const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
     <>
-      {/* Mobile Menu Overlay - Rendered as sibling to nav to avoid CSS containing block issues */}
+      {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-[#0f072e] lg:hidden transition-all duration-500 ease-in-out z-[99] overflow-y-auto px-6 pt-32 pb-12",
+          "fixed inset-0 bg-[#0f072e] lg:hidden transition-all duration-500 ease-in-out z-99 overflow-y-auto px-6 pt-32 pb-12",
           isMenuOpen
             ? "translate-x-0 opacity-100 pointer-events-auto"
             : "translate-x-full opacity-0 pointer-events-none",
         )}
       >
         <div className="flex flex-col gap-10">
-          <div className="flex flex-col gap-6" role="list">
+          <ul className="flex flex-col gap-6">
             {NAV_LINKS.map((link, i) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                style={{ transitionDelay: `${i * 75}ms` }}
-                className={cn(
-                  "text-5xl font-headline font-bold transition-all transform",
-                  isMenuOpen
-                    ? "translate-x-0 opacity-100"
-                    : "translate-x-8 opacity-0",
-                  pathname === link.href
-                    ? "text-primary"
-                    : "text-white/40 hover:text-white",
-                )}
-                role="listitem"
-              >
-                {link.label}
-              </Link>
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={closeMenu}
+                  style={{ transitionDelay: `${i * 75}ms` }}
+                  className={cn(
+                    "text-5xl font-headline font-bold transition-all transform block",
+                    isMenuOpen
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0",
+                    pathname === link.href
+                      ? "text-primary"
+                      : "text-white/70 hover:text-white",
+                  )}
+                >
+                  {link.label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className="mt-4 border-t border-white/10 pt-10 flex flex-col gap-8">
             <div className="flex flex-col gap-3">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-primary font-black opacity-80">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-primary font-black">
                 Context & Language
               </span>
               <button className="flex items-center justify-between text-white font-bold p-5 rounded-2xl bg-white/5 border border-white/5 active:scale-95 transition-all">
@@ -92,19 +70,21 @@ export default function Navbar() {
               </button>
             </div>
 
-            <button className="w-full bg-linear-to-r from-primary to-secondary text-[#0f072e] py-5 rounded-2xl font-black text-lg shadow-[0_20px_40px_-10px_rgba(186,158,255,0.3)] active:scale-95 transition-all flex items-center justify-center gap-3">
-              <span className="material-symbols-outlined font-bold">
-                download
-              </span>
+            <Button
+              size="lg"
+              className="w-full py-5 text-lg"
+              icon="download"
+              variant="primary"
+            >
               Download APP
-            </button>
+            </Button>
           </div>
         </div>
       </div>
 
       <nav
         className={cn(
-          "fixed top-0 w-full z-[100] transition-all duration-500 ease-out",
+          "fixed top-0 w-full z-100 transition-all duration-500 ease-out",
           isScrolled || isMenuOpen
             ? "bg-[#0f072e]/90 backdrop-blur-2xl shadow-2xl border-b border-white/5 py-3 md:py-4"
             : "bg-transparent py-6 md:py-8",
@@ -134,7 +114,7 @@ export default function Navbar() {
                 <span className="text-sm md:text-base font-headline font-black text-[#ba9eff] tracking-tighter leading-none group-hover:text-primary transition-colors">
                   MAHMOUD
                 </span>
-                <span className="text-[9px] md:text-[11px] font-headline font-bold text-on-surface-variant tracking-[0.25em] leading-none opacity-50 uppercase mt-0.5">
+                <span className="text-[9px] md:text-[11px] font-headline font-bold text-on-surface-variant tracking-[0.25em] leading-none opacity-90 uppercase mt-0.5">
                   ZANOUN
                 </span>
               </div>
@@ -174,20 +154,20 @@ export default function Navbar() {
           <div className="flex-1 lg:w-1/4 flex items-center justify-end gap-3 md:gap-5">
             <div className="hidden lg:flex items-center gap-6">
               <button
-                className="text-slate-400 hover:text-white transition-colors text-xs font-black uppercase tracking-[0.2em] focus:outline-none hover:text-primary"
+                className="text-slate-400 transition-colors text-xs font-black uppercase tracking-[0.2em] focus:outline-none hover:text-white"
                 aria-label="Toggle language"
               >
                 EN
               </button>
-              <button className="bg-primary text-[#0f072e] px-6 py-2.5 rounded-lg font-black text-xs tracking-wider uppercase active:scale-95 transition-all hover:bg-primary/90 shadow-lg shadow-primary/20">
+              <Button size="md" variant="primary" icon="download">
                 Download APP
-              </button>
+              </Button>
             </div>
 
             {/* Mobile Menu Toggle */}
             <button
               className="lg:hidden w-12 h-12 flex flex-col items-center justify-center gap-1.5 focus:outline-none group relative z-50 rounded-full hover:bg-white/5 transition-colors"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={toggleMenu}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
             >

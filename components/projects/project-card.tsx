@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -64,13 +62,12 @@ export default function ProjectCard({
         {/* Content Side */}
         <div className="flex-1 flex flex-col gap-8 relative z-10">
           <div className="flex flex-col gap-5">
-            <div
+            <ul
               className="flex flex-wrap gap-2"
-              role="list"
               aria-label="Project Technologies"
             >
               {tags.map((tag) => (
-                <span
+                <li
                   key={tag}
                   className={cn(
                     "px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase border",
@@ -78,19 +75,18 @@ export default function ProjectCard({
                       ? "border-secondary/10 bg-secondary/10 text-secondary"
                       : "border-white/5 bg-white/5 text-on-surface-variant",
                   )}
-                  role="listitem"
                 >
                   {tag}
-                </span>
+                </li>
               ))}
-            </div>
-            <h3
+            </ul>
+            <h2
               id={`project-${title.toLowerCase().replace(/\s+/g, "-")}`}
-              className="text-3xl md:text-5xl font-headline font-bold text-on-surface leading-tight tracking-tight mt-2 italic font-normal"
+              className="text-3xl md:text-5xl font-headline text-on-surface leading-tight tracking-tight mt-2 italic font-normal"
             >
               {title}
-            </h3>
-            <p className="text-on-surface-variant leading-relaxed text-lg font-light max-w-lg opacity-80">
+            </h2>
+            <p className="text-on-surface-variant leading-relaxed text-lg font-light max-w-lg">
               {description}
             </p>
           </div>
