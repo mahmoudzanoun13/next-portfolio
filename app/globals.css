@@ -89,6 +89,20 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline font-bold;
   }
+
+  /* Reset Chrome/Safari Autofill Background */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    /* Using solid hex because some browsers fail to resolve variables in autofill rules */
+    -webkit-text-fill-color: #e9e1ff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #1b1140 inset !important;
+    border: 1px solid rgba(186, 158, 255, 0.3) !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }
 
 @layer utilities {
