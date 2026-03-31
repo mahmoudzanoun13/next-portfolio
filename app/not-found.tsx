@@ -13,7 +13,7 @@ export default function NotFound() {
       />
 
       <Section
-        className="min-h-[80vh] flex flex-col justify-center"
+        className="min-h-screen flex flex-col justify-center"
         innerClassName="flex flex-col items-center justify-center text-center gap-12"
       >
         <div className="relative group flex flex-col items-center">

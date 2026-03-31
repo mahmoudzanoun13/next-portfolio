@@ -16,30 +16,54 @@ export default function Error({
   }, [error]);
 
   return (
-    <Section className="min-h-screen flex flex-col items-center justify-center text-center gap-10">
-      <div className="relative group">
-        <div className="absolute -inset-10 bg-error/10 blur-[100px] rounded-full group-hover:bg-error/20 transition-all pointer-events-none" />
-        <span className="material-symbols-outlined text-8xl text-error animate-pulse">
-          warning
-        </span>
-      </div>
-      <div className="space-y-4 max-w-xl">
-        <h1 className="text-4xl md:text-6xl font-headline font-bold text-on-surface tracking-tighter">
-          Something went <span className="text-error">wrong</span>.
-        </h1>
-        <p className="text-on-surface-variant text-lg font-light leading-relaxed">
-          The requested operation could not be completed successfully. Our
-          engineers have been notified.
-        </p>
-      </div>
-      <div className="flex gap-4">
-        <Button variant="primary" onClick={() => reset()} icon="refresh">
-          Try Again
-        </Button>
-        <Button as="a" href="/" variant="outline" icon="home">
-          Return Home
-        </Button>
-      </div>
-    </Section>
+    <main className="relative min-h-screen tech-grid overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 hero-gradient pointer-events-none -z-10 opacity-40" />
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-error/5 rounded-full blur-[150px] -z-10"
+        aria-hidden="true"
+      />
+
+      <Section
+        className="min-h-screen flex flex-col justify-center"
+        innerClassName="flex flex-col items-center justify-center text-center gap-12"
+      >
+        <div className="relative group">
+          <div className="absolute -inset-20 bg-error/10 blur-[100px] rounded-full group-hover:bg-error/20 transition-all pointer-events-none" />
+          <span className="material-symbols-outlined text-[100px] md:text-[120px] text-error animate-pulse relative z-10 transition-transform duration-700 group-hover:scale-110">
+            report
+          </span>
+        </div>
+
+        <div className="space-y-6 max-w-2xl">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold text-on-surface tracking-tighter">
+            Something went <span className="text-error italic">sideways</span>.
+          </h1>
+          <p className="text-on-surface-variant text-lg md:text-xl font-light leading-relaxed max-w-lg mx-auto">
+            An unexpected error occurred while processing your request. Our
+            diagnostic systems have been notified.
+            {error.digest && (
+              <span className="block mt-4 text-xs font-mono opacity-50 mx-auto">
+                Error Hash: {error.digest}
+              </span>
+            )}
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-6 relative z-10 mt-12">
+          <Button
+            variant="primary"
+            size="xl"
+            onClick={() => reset()}
+            icon="refresh"
+          >
+            Attempt Recovery
+          </Button>
+          <Button as="a" href="/" variant="outline" size="xl" icon="home">
+            Emergency Exit
+          </Button>
+        </div>
+      </Section>
+    </main>
   );
 }
