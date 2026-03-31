@@ -4,8 +4,6 @@ import { FooterSocials } from "./footer-socials";
 import { FooterLegal } from "./footer-legal";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="relative mt-auto py-16 md:py-24 border-t border-white/5 overflow-hidden">
       {" "}
@@ -21,7 +19,7 @@ export default function Footer() {
       <Section className="flex flex-col md:flex-row justify-between items-center gap-24 md:gap-12">
         <FooterBrand />
         <FooterSocials />
-        <FooterLegal currentYear={currentYear} />
+        <FooterLegal />
       </Section>
       {/* Bottom accent line */}
       <div

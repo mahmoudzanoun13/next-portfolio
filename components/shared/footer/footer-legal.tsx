@@ -1,11 +1,14 @@
-interface FooterLegalProps {
-  currentYear: number;
-}
+"use client";
 
-export function FooterLegal({ currentYear }: FooterLegalProps) {
+export function FooterLegal() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="flex flex-col items-center md:items-end gap-6 md:gap-3 text-center md:text-right">
-      <p className="text-sm text-on-surface font-semibold tracking-wide">
+      <p
+        className="text-sm text-on-surface font-semibold tracking-wide"
+        suppressHydrationWarning
+      >
         &copy; {currentYear} • Mahmoud Zanoun Portfolio
       </p>
       <div className="flex items-center gap-2 text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">
