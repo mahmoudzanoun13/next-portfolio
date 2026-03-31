@@ -21,8 +21,12 @@ export default function ProjectsPage() {
 
         {/* Projects Grid */}
         <div className="relative z-10 flex flex-col gap-10">
-          {PORTFOLIO_DATA.projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+          {PORTFOLIO_DATA.projects.map((project, index) => (
+            <ProjectCard
+              key={project.title}
+              {...project}
+              priority={index === 0}
+            />
           ))}
         </div>
 

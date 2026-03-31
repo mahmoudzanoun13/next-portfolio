@@ -8,6 +8,7 @@ interface ProjectCardProps {
   features?: string[];
   image?: string;
   accent?: "primary" | "secondary" | "tertiary";
+  priority?: boolean;
 }
 
 import { ProjectCardTags } from "./card/project-card-tags";
@@ -23,6 +24,7 @@ export default function ProjectCard({
   features,
   image,
   accent = "primary",
+  priority = false,
 }: ProjectCardProps) {
   const accentClasses = {
     primary:
@@ -91,7 +93,9 @@ export default function ProjectCard({
           />
         </div>
 
-        {image && <ProjectCardImage image={image} title={title} />}
+        {image && (
+          <ProjectCardImage image={image} title={title} priority={priority} />
+        )}
       </div>
     </article>
   );
