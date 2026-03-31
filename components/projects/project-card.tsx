@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -10,6 +9,11 @@ interface ProjectCardProps {
   image?: string;
   accent?: "primary" | "secondary" | "tertiary";
 }
+
+import { ProjectCardTags } from "./card/project-card-tags";
+import { ProjectCardFeatures } from "./card/project-card-features";
+import { ProjectCardAction } from "./card/project-card-action";
+import { ProjectCardImage } from "./card/project-card-image";
 
 export default function ProjectCard({
   title,
@@ -46,7 +50,6 @@ export default function ProjectCard({
           accentClasses[accent],
         )}
       >
-        {/* Abstract Background Decoration */}
         <div
           className={cn(
             "absolute -top-24 -right-24 w-60 h-60 blur-[100px] opacity-20 pointer-events-none transition-opacity duration-700 group-hover:opacity-40",
@@ -59,27 +62,9 @@ export default function ProjectCard({
           aria-hidden="true"
         />
 
-        {/* Content Side */}
         <div className="flex-1 flex flex-col gap-8 relative z-10">
           <div className="flex flex-col gap-5">
-            <ul
-              className="flex flex-wrap gap-2"
-              aria-label="Project Technologies"
-            >
-              {tags.map((tag) => (
-                <li
-                  key={tag}
-                  className={cn(
-                    "px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase border",
-                    accent === "secondary"
-                      ? "border-secondary/10 bg-secondary/10 text-secondary"
-                      : "border-white/5 bg-white/5 text-on-surface-variant",
-                  )}
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
+            <ProjectCardTags tags={tags} accent={accent} />
             <h2
               id={`project-${title.toLowerCase().replace(/\s+/g, "-")}`}
               className="text-3xl md:text-5xl font-headline text-on-surface leading-tight tracking-tight mt-2 italic font-normal"
@@ -91,78 +76,22 @@ export default function ProjectCard({
             </p>
           </div>
 
-          {/* Features List */}
           {features && (
-            <div
-              className="flex flex-col gap-4 mt-4"
-              role="list"
-              aria-label="Key Features"
-            >
-              {features.map((feature, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 text-[13px] font-medium text-on-surface-variant group/feat"
-                  role="listitem"
-                >
-                  <span
-                    className={cn(
-                      "material-symbols-outlined text-base transition-transform group-hover/feat:scale-125",
-                      accentText[accent],
-                    )}
-                    aria-hidden="true"
-                  >
-                    verified
-                  </span>
-                  {feature}
-                </div>
-              ))}
-            </div>
+            <ProjectCardFeatures
+              features={features}
+              accentText={accentText[accent]}
+            />
           )}
 
-          {/* Action Button */}
-          <div className="mt-auto pt-10">
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] transition-all group-hover:gap-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background rounded-lg",
-                accentText[accent],
-                accent === "primary"
-                  ? "focus:ring-primary"
-                  : accent === "secondary"
-                    ? "focus:ring-secondary"
-                    : "focus:ring-tertiary",
-              )}
-              aria-label={`Explore the ${title} case study (opens in new tab)`}
-            >
-              Explore Case Study
-              <span
-                className="material-symbols-outlined text-lg"
-                aria-hidden="true"
-              >
-                arrow_forward
-              </span>
-            </a>
-          </div>
+          <ProjectCardAction
+            title={title}
+            link={link}
+            accent={accent}
+            accentText={accentText[accent]}
+          />
         </div>
 
-        {/* Image Side */}
-        {image && (
-          <div className="xl:w-[450px] relative aspect-video rounded-2xl overflow-hidden border border-white/10 group-hover:border-white/20 transition-all duration-700 self-center">
-            <Image
-              src={image}
-              alt={`Live preview screenshot of ${title} project interface`}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
-            />
-            {/* Image Overlay Gradient */}
-            <div
-              className="absolute inset-0 bg-linear-to-t from-background/40 to-transparent"
-              aria-hidden="true"
-            />
-          </div>
-        )}
+        {image && <ProjectCardImage image={image} title={title} />}
       </div>
     </article>
   );
