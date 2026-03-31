@@ -12,6 +12,7 @@ export function ProjectCardImage({ image, title }: ProjectCardImageProps) {
         src={image}
         alt={`Live preview screenshot of ${title} project interface`}
         fill
+        sizes="(max-width: 1280px) 100vw, 450px"
         className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
       />
       <div

@@ -41,6 +41,7 @@ export function TimelineCardAssets({ item }: TimelineCardAssetsProps) {
           <Image
             src={item.image}
             fill
+            sizes="(max-width: 1024px) 100vw, 400px"
             className="object-cover grayscale opacity-40 group-hover/img:grayscale-0 group-hover/img:opacity-100 transition-all duration-700 scale-105 group-hover/img:scale-100"
             alt={`Contextual laboratory or development space for ${item.company}`}
           />
