@@ -14,6 +14,7 @@ export function FooterBrand() {
             src="/assets/logo.png"
             alt="M monogram logo"
             fill
+            sizes="(max-width: 768px) 40px, 48px"
             className="object-cover scale-150 group-hover:scale-125 transition-transform duration-700"
           />
         </div>

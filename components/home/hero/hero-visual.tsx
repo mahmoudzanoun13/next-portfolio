@@ -19,6 +19,8 @@ export function HeroVisual() {
               className="w-full h-full object-cover opacity-60"
               src="/assets/hero-visual.png"
               fill
+              sizes="(max-width: 1280px) 100vw, 500px"
+              priority
             />
             <div className="absolute inset-0 bg-linear-to-t from-surface-container-lowest via-transparent to-transparent"></div>
 
