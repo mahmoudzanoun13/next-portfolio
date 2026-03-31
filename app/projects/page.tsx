@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
+import Link from "next/link";
 
 export default function ProjectsPage() {
   return (
@@ -47,7 +48,13 @@ export default function ProjectsPage() {
               boundaries of the modern web.
             </p>
           </div>
-          <Button size="xl" variant="primary">
+          <Button
+            as={Link}
+            href="/contact"
+            size="xl"
+            variant="primary"
+            icon="chat"
+          >
             Let&apos;s Collaborate
           </Button>
         </GlassCard>
