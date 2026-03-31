@@ -14,10 +14,7 @@ export function NavActions({
 }: NavActionsProps) {
   return (
     <div
-      className={cn(
-        "flex-1 lg:w-1/4 flex items-center justify-end gap-3 md:gap-5",
-        className,
-      )}
+      className={cn("flex items-center justify-end gap-3 md:gap-5", className)}
     >
       <div className="hidden lg:flex items-center gap-6">
         <button

@@ -35,9 +35,17 @@ export default function Navbar() {
         aria-label="Main Navigation"
       >
         <div className="flex justify-between items-center w-full px-6 max-w-7xl mx-auto">
-          <NavLogo onClick={closeMenu} className="flex-1 lg:w-1/4" />
+          {/* Logo Wrapper - keeps logo space but centers hover on content */}
+          <div className="flex-1 lg:w-1/4 flex justify-start">
+            <NavLogo onClick={closeMenu} />
+          </div>
+
           <DesktopMenu pathname={pathname} />
-          <NavActions isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+
+          {/* Actions Wrapper - keeps space balanced */}
+          <div className="flex-1 lg:w-1/4 flex justify-end">
+            <NavActions isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          </div>
         </div>
       </nav>
     </>
