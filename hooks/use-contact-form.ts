@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import emailjs from "emailjs-com";
 import { SUBJECT_OPTIONS, SubjectOption } from "@/constants/contact";
 import { ContactFormValues, ContactFormErrors } from "@/types/contact";
@@ -51,81 +51,86 @@ export function useContactForm() {
     };
   }, [isOpen]);
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
-  const closeDropdown = () => setIsOpen(false);
+  const toggleDropdown = useCallback(() => setIsOpen((prev) => !prev), []);
+  const closeDropdown = useCallback(() => setIsOpen(false), []);
 
-  const handleSelectSubject = (option: SubjectOption) => {
+  const handleSelectSubject = useCallback((option: SubjectOption) => {
     setSelectedSubject(option);
     setIsOpen(false);
-  };
+  }, []);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setValues((prev) => ({ ...prev, [name]: value }));
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setValues((prev) => ({ ...prev, [name]: value }));
 
-    // Clear error when user starts typing
-    if (fieldErrors[name as keyof ContactFormErrors]) {
+      // Clear error when user starts typing
       setFieldErrors((prev) => {
-        const newErrors = { ...prev };
-        delete newErrors[name as keyof ContactFormErrors];
-        return newErrors;
+        if (prev[name as keyof ContactFormErrors]) {
+          const newErrors = { ...prev };
+          delete newErrors[name as keyof ContactFormErrors];
+          return newErrors;
+        }
+        return prev;
       });
-    }
-  };
+    },
+    []
+  );
 
-  const handleSubmit = async (e: React.SubmitEvent) => {
-    e.preventDefault();
-    if (!formRef.current) return;
+  const handleSubmit = useCallback(
+    async (e: React.SubmitEvent) => {
+      e.preventDefault();
+      if (!formRef.current) return;
 
-    // Run custom validation using the external validator
-    const errors = validateContactForm(values);
-    setFieldErrors(errors);
+      // Run custom validation using the external validator
+      const errors = validateContactForm(values);
+      setFieldErrors(errors);
 
-    if (Object.keys(errors).length > 0) {
-      return;
-    }
-
-    // Check if configuration is missing
-    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      setError(
-        "The contact system is not configured yet. Please check again later."
-      );
-      return;
-    }
-
-    setIsSubmitting(true);
-    setError(null);
-
-    try {
-      const result = await emailjs.sendForm(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        formRef.current,
-        PUBLIC_KEY
-      );
-
-      if (result.text === "OK") {
-        setIsSuccess(true);
-      } else {
-        throw new Error("Failed to send message.");
+      if (Object.keys(errors).length > 0) {
+        return;
       }
-    } catch (err) {
-      console.error("EmailJS Error:", err);
-      setError("Something went wrong. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
-  const resetForm = () => {
+      // Check if configuration is missing
+      if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+        setError(
+          "The contact system is not configured yet. Please check again later."
+        );
+        return;
+      }
+
+      setIsSubmitting(true);
+      setError(null);
+
+      try {
+        const result = await emailjs.sendForm(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          formRef.current,
+          PUBLIC_KEY
+        );
+
+        if (result.text === "OK") {
+          setIsSuccess(true);
+        } else {
+          throw new Error("Failed to send message.");
+        }
+      } catch (err) {
+        console.error("EmailJS Error:", err);
+        setError("Something went wrong. Please try again later.");
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [values]
+  );
+
+  const resetForm = useCallback(() => {
     setIsSuccess(false);
     setError(null);
     setFieldErrors({});
     setValues({ name: "", email: "", message: "" });
     setSelectedSubject(SUBJECT_OPTIONS[0]);
-  };
+  }, []);
 
   return {
     formRef,

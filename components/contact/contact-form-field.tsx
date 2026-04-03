@@ -17,8 +17,9 @@ interface ContactFormFieldProps {
 }
 
 import { useLocale } from "next-intl";
+import { memo } from "react";
 
-export function ContactFormField({
+export const ContactFormField = memo(function ContactFormField({
   id,
   label,
   name,
@@ -73,4 +74,4 @@ export function ContactFormField({
       )}
     </div>
   );
-}
+});
