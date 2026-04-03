@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import { SUBJECT_OPTIONS, SubjectOption } from "@/constants/contact";
 import { ContactFormValues, ContactFormErrors } from "@/types/contact";
 import { validateContactForm } from "@/lib/validation/contact";
+import { useTranslations } from "next-intl";
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
@@ -11,6 +12,7 @@ const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
 export function useContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("Contact.form");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -83,7 +85,7 @@ export function useContactForm() {
       if (!formRef.current) return;
 
       // Run custom validation using the external validator
-      const errors = validateContactForm(values);
+      const errors = validateContactForm(values, t);
       setFieldErrors(errors);
 
       if (Object.keys(errors).length > 0) {
@@ -121,7 +123,7 @@ export function useContactForm() {
         setIsSubmitting(false);
       }
     },
-    [values]
+    [values, t]
   );
 
   const resetForm = useCallback(() => {

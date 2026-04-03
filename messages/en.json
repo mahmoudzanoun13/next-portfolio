@@ -111,7 +111,15 @@
       },
       "success_title": "Message <highlight>Received</highlight>",
       "success_desc": "Thank you for reaching out. I've received your inquiry and will get back to you at mahmoudzanoun35@yahoo.com within 24 hours.",
-      "success_btn_reset": "Send Another"
+      "success_btn_reset": "Send Another",
+      "validation": {
+        "name_required": "Your name is required.",
+        "name_min": "Name must be at least 2 characters.",
+        "email_required": "Email address is required.",
+        "email_invalid": "Please enter a valid email address.",
+        "message_required": "Message content is required.",
+        "message_min": "Message should be at least 10 characters."
+      }
     }
   }
 }

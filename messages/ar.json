@@ -111,7 +111,15 @@
       },
       "success_title": "استلمت <highlight>رسالتك</highlight>",
       "success_desc": "شكرًا لتواصلك. لقد تلقيت استفسارك وسأرد عليك على mahmoudzanoun35@yahoo.com خلال ٢٤ ساعة.",
-      "success_btn_reset": "إرسال أخرى"
+      "success_btn_reset": "إرسال أخرى",
+      "validation": {
+        "name_required": "الاسم مطلوب.",
+        "name_min": "يجب أن يتكون الاسم من حرفين على الأقل.",
+        "email_required": "عنوان البريد الإلكتروني مطلوب.",
+        "email_invalid": "يرجى إدخال عنوان بريد إلكتروني صالح.",
+        "message_required": "محتوى الرسالة مطلوب.",
+        "message_min": "يجب أن تتكون الرسالة من 10 أحرف على الأقل."
+      }
     }
   }
 }
