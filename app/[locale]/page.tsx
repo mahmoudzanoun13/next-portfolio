@@ -1,8 +1,17 @@
 import Hero from "@/components/home/hero";
 import { Section } from "@/components/ui/section";
-import { PORTFOLIO_DATA } from "@/constants/portfolio";
+import { getTranslations } from "next-intl/server";
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations("Stats");
+
+  const stats = [
+    { label: t("years_experience"), value: "3+" },
+    { label: t("projects_delivered"), value: "8+" },
+    { label: t("code_accuracy"), value: "95%" },
+    { label: t("tech_stack_tools"), value: "15+" },
+  ];
+
   return (
     <main className="relative min-h-screen tech-grid overflow-x-hidden">
       {/* Background decorative elements */}
@@ -24,7 +33,7 @@ export default function Home() {
       {/* Stats Section */}
       <Section className="py-12" aria-label="Professional Statistics">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8" role="list">
-          {PORTFOLIO_DATA.stats.map((stat) => (
+          {stats.map((stat) => (
             <div key={stat.label} className="space-y-1" role="listitem">
               <p className="text-3xl font-headline font-bold text-primary">
                 {stat.value}

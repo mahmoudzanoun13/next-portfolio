@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
+import { useTranslations } from "next-intl";
 
 export default function Error({
   error,
@@ -14,6 +15,8 @@ export default function Error({
   useEffect(() => {
     console.error(error);
   }, [error]);
+
+  const t = useTranslations("Error");
 
   return (
     <main className="relative min-h-screen tech-grid overflow-hidden">
@@ -37,14 +40,17 @@ export default function Error({
 
         <div className="space-y-6 max-w-2xl">
           <h1 className="text-4xl md:text-6xl font-headline font-bold text-on-surface tracking-tighter">
-            Something went <span className="text-error italic">sideways</span>.
+            {t.rich("title", {
+              highlight: (chunks) => (
+                <span className="text-error italic">{chunks}</span>
+              ),
+            })}
           </h1>
           <p className="text-on-surface-variant text-lg md:text-xl font-light leading-relaxed max-w-lg mx-auto">
-            An unexpected error occurred while processing your request. Our
-            diagnostic systems have been notified.
+            {t("description")}
             {error.digest && (
               <span className="block mt-4 text-xs font-mono opacity-50 mx-auto">
-                Error Hash: {error.digest}
+                {t("hash")} {error.digest}
               </span>
             )}
           </p>
@@ -57,10 +63,10 @@ export default function Error({
             onClick={() => reset()}
             icon="refresh"
           >
-            Attempt Recovery
+            {t("btn_recovery")}
           </Button>
           <Button as="a" href="/" variant="outline" size="xl" icon="home">
-            Emergency Exit
+            {t("btn_exit")}
           </Button>
         </div>
       </Section>

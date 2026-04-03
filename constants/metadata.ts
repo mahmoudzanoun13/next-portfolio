@@ -9,13 +9,22 @@ export const VIEWPORT_CONFIG: Viewport = {
   maximumScale: 5,
 };
 
-export const METADATA_CONFIG: Metadata = {
+export type MetadataTranslationKeys =
+  | "title_default"
+  | "title_template"
+  | "description"
+  | "og_description"
+  | "site_name"
+  | "locale";
+
+export const getMetadataConfig = (
+  t: (key: MetadataTranslationKeys) => string,
+): Metadata => ({
   title: {
-    default: "Mahmoud Zanoun | Senior Frontend Specialist",
-    template: "%s | Mahmoud Zanoun",
+    default: t("title_default"),
+    template: t("title_template"),
   },
-  description:
-    "Architecting digital excellence with precision. Senior Frontend Developer specializing in React, Next.js, and architectural system design. 3+ years of experience delivering high-performance scalable web applications.",
+  description: t("description"),
   keywords: [
     "Frontend Developer",
     "React Specialist",
@@ -44,20 +53,18 @@ export const METADATA_CONFIG: Metadata = {
     shortcut: "/assets/logo.png",
   },
   openGraph: {
-    title: "Mahmoud Zanoun | Senior Frontend Specialist",
-    description:
-      "Architecting digital excellence with precision. Specialized in React and Next.js.",
+    title: t("title_default"),
+    description: t("og_description"),
     url: PORTFOLIO_METADATA_BASE,
-    siteName: "Mahmoud Zanoun Portfolio",
-    locale: "en_US",
+    siteName: t("site_name"),
+    locale: t("locale"),
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mahmoud Zanoun | Senior Frontend Specialist",
-    description:
-      "Architecting digital excellence with precision. Specialized in React and Next.js.",
+    title: t("title_default"),
+    description: t("og_description"),
     creator: "@mahmoudzanoun",
   },
   category: "technology",
-};
+});

@@ -3,7 +3,7 @@ import { HeroContent } from "./hero/hero-content";
 import { HeroTechStack } from "./hero/hero-tech-stack";
 import { HeroVisual } from "./hero/hero-visual";
 
-export default function Hero() {
+export default async function Hero() {
   return (
     <Section className="py-12 md:py-24" aria-labelledby="hero-title">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

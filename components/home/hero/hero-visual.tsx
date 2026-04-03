@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { GlassCard } from "@/components/ui/glass-card";
+import { getTranslations } from "next-intl/server";
 
-export function HeroVisual() {
+export async function HeroVisual() {
+  const t = await getTranslations("Hero");
+
   return (
     <div className="lg:col-span-12 xl:col-span-5 relative" aria-hidden="true">
       <div className="relative w-full aspect-square max-w-[500px] mx-auto">
@@ -31,7 +34,7 @@ export function HeroVisual() {
       </div>
 
       {/* PWA/Install Hint */}
-      <InstallHint />
+      <InstallHint title={t("install_web_app")} desc={t("install_desc")} />
     </div>
   );
 }
@@ -40,7 +43,8 @@ function CodeSnippetCard() {
   return (
     <GlassCard
       variant="medium"
-      className="absolute bottom-6 left-6 right-6 p-4 rounded-xl border border-primary/20 hover:-translate-y-1 z-10"
+      className="absolute bottom-6 left-6 right-6 p-4 rounded-xl border border-primary/20 hover:-translate-y-1 z-10 text-left"
+      dir="ltr"
     >
       <div className="flex gap-1.5 mb-3">
         <div className="w-2.5 h-2.5 rounded-full bg-error-dim"></div>
@@ -67,7 +71,7 @@ function CodeSnippetCard() {
   );
 }
 
-function InstallHint() {
+function InstallHint({ title, desc }: { title: string; desc: string }) {
   return (
     <GlassCard
       variant="medium"
@@ -80,12 +84,8 @@ function InstallHint() {
           <span className="material-symbols-outlined">install_desktop</span>
         </div>
         <div>
-          <h4 className="text-sm font-bold text-on-surface">
-            Install as Web App
-          </h4>
-          <p className="text-xs text-on-surface-variant">
-            Enjoy a seamless offline experience
-          </p>
+          <h4 className="text-sm font-bold text-on-surface">{title}</h4>
+          <p className="text-xs text-on-surface-variant">{desc}</p>
         </div>
       </div>
       <span

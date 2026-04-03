@@ -1,40 +1,47 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { getTranslations } from "next-intl/server";
+import { getLocale } from "next-intl/server";
 
-export function HeroContent() {
+export async function HeroContent() {
+  const t = await getTranslations("Hero");
+  const locale = await getLocale();
+  const isRtl = locale === "ar";
+
   return (
     <div className="lg:col-span-12 xl:col-span-7 space-y-8">
       <Badge
         variant="secondary"
         size="sm"
-        className="bg-secondary-container/30 border border-secondary/20"
+        className="bg-secondary-container/30 border border-secondary/20 transition-all hover:bg-secondary-container/50"
       >
-        <span className="relative flex h-2 w-2 mr-2" aria-hidden="true">
+        <span className="relative flex h-2 w-2 me-2" aria-hidden="true">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
         </span>
-        Available for Innovation
+        {t("badge")}
       </Badge>
 
       <h1
         id="hero-title"
         className="text-5xl md:text-7xl font-headline font-bold tracking-tighter leading-[1.1]"
       >
-        Architecting{" "}
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-          Digital Excellence
-        </span>{" "}
-        as a Senior Frontend Developer
+        {t.rich("title", {
+          highlight: (chunks: React.ReactNode) => (
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
+              {chunks}
+            </span>
+          ),
+        })}
       </h1>
 
       <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl font-body font-light">
-        3 years of hands-on experience in building scalable, high-performance
-        web applications. Specialized in{" "}
-        <span className="font-semibold text-white">React</span> and{" "}
-        <span className="font-semibold text-white">Next.js</span>, integrating{" "}
-        <span className="font-semibold text-white">AI tools</span> to push the
-        boundaries of modern user interfaces.
+        {t.rich("subtitle", {
+          bold: (chunks: React.ReactNode) => (
+            <span className="font-semibold text-white">{chunks}</span>
+          ),
+        })}
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -43,12 +50,12 @@ export function HeroContent() {
           href="/projects"
           size="lg"
           variant="primary"
-          icon="arrow_forward"
+          icon={isRtl ? "arrow_back" : "arrow_forward"}
           iconPosition="right"
-          className="w-full sm:w-auto"
+          className="w-full sm:w-auto overflow-hidden group/btn"
           aria-label="Explore my project portfolio"
         >
-          Explore My Work
+          {t("cta_work")}
         </Button>
         <Button
           as="a"
@@ -61,7 +68,7 @@ export function HeroContent() {
           className="w-full sm:w-auto"
           aria-label="View my professional resume (opens in new tab)"
         >
-          View Resume
+          {t("cta_resume")}
         </Button>
       </div>
     </div>

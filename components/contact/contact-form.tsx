@@ -3,13 +3,20 @@
 import { useContactForm } from "@/hooks/use-contact-form";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 import { ContactFormHeader } from "./contact-form-header";
 import { SubjectDropdown } from "./contact-form-subject-dropdown";
 import { ContactFormSuccess } from "./contact-form-success";
 import { ContactFormField } from "./contact-form-field";
+import { useLocale } from "next-intl";
+import { cn } from "@/lib/utils";
 
 export function ContactForm() {
+  const t = useTranslations("Contact.form");
+  const locale = useLocale();
+  const isRtl = locale === "ar";
+
   const {
     formRef,
     dropdownRef,
@@ -37,7 +44,10 @@ export function ContactForm() {
       className="p-8 md:p-12 relative overflow-hidden group"
     >
       <div
-        className="absolute top-0 right-0 p-8 text-primary/10 select-none pointer-events-none"
+        className={cn(
+          "absolute top-0 p-8 text-primary/10 select-none pointer-events-none",
+          isRtl ? "left-0" : "right-0",
+        )}
         aria-hidden="true"
       >
         <span className="material-symbols-outlined text-9xl">mail</span>
@@ -63,22 +73,22 @@ export function ContactForm() {
           <ContactFormField
             id="name"
             name="name"
-            label="Your Name"
+            label={t("name_label")}
             value={values.name}
             onChange={handleInputChange}
             error={fieldErrors.name}
-            placeholder="John Doe"
+            placeholder={t("name_placeholder")}
           />
 
           <ContactFormField
             id="email"
             name="email"
-            label="Email Address"
+            label={t("email_label")}
             type="email"
             value={values.email}
             onChange={handleInputChange}
             error={fieldErrors.email}
-            placeholder="john@example.com"
+            placeholder={t("email_placeholder")}
           />
         </div>
 
@@ -93,12 +103,12 @@ export function ContactForm() {
         <ContactFormField
           id="message"
           name="message"
-          label="Message Payload"
+          label={t("message_label")}
           type="textarea"
           value={values.message}
           onChange={handleInputChange}
           error={fieldErrors.message}
-          placeholder="Tell me about your project or inquiry..."
+          placeholder={t("message_placeholder")}
         />
 
         <Button
@@ -108,7 +118,7 @@ export function ContactForm() {
           icon="send"
           className="w-full md:w-max ml-auto group-hover:shadow-[0_0_40px_-5px_rgba(186,158,255,0.4)]"
         >
-          {isSubmitting ? "Broadcasting..." : "Transmit Signal"}
+          {isSubmitting ? t("btn_broadcasting") : t("btn_transmit")}
         </Button>
       </form>
     </GlassCard>

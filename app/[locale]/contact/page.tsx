@@ -3,8 +3,10 @@ import { Section } from "@/components/ui/section";
 import { ContactInfoGrid } from "@/components/contact/contact-info-grid";
 import { PwaInstallCard } from "@/components/contact/pwa-install-card";
 import { ContactForm } from "@/components/contact/contact-form";
+import { getTranslations } from "next-intl/server";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const t = await getTranslations("Contact");
   return (
     <main className="pb-24 max-w-7xl mx-auto min-h-screen relative overflow-hidden">
       {/* Background decoration */}
@@ -12,14 +14,17 @@ export default function ContactPage() {
       <Section>
         {/* Section Header */}
         <PageHeader
-          tag="Get In Touch"
+          tag={t("tag")}
           title={
             <>
-              Let&apos;s Build Something{" "}
-              <span className="italic font-normal">Extraordinary</span>
+              {t.rich("title", {
+                italic: (chunks) => (
+                  <span className="italic font-normal">{chunks}</span>
+                ),
+              })}
             </>
           }
-          subtitle="Whether you're looking to architect a new digital product or transform an existing ecosystem, I'm ready to collaborate."
+          subtitle={t("subtitle")}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-16 items-start relative z-10">

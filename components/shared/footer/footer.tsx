@@ -3,7 +3,7 @@ import { FooterBrand } from "./footer-brand";
 import { FooterSocials } from "./footer-socials";
 import { FooterLegal } from "./footer-legal";
 
-export default function Footer() {
+export default async function Footer() {
   return (
     <footer className="relative mt-auto py-16 md:py-24 border-t border-white/5 overflow-hidden">
       {" "}

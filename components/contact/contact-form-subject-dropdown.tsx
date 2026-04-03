@@ -1,8 +1,7 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import { RefObject } from "react";
 import { SUBJECT_OPTIONS, SubjectOption } from "@/constants/contact";
+import { useTranslations } from "next-intl";
 
 interface SubjectDropdownProps {
   isOpen: boolean;
@@ -19,10 +18,21 @@ export function SubjectDropdown({
   onToggle,
   onSelect,
 }: SubjectDropdownProps) {
+  const t = useTranslations("Contact.form");
+
+  type ValidSubjectKey =
+    | "subjects.general_inquiry"
+    | "subjects.project_proposal"
+    | "subjects.technical_consultation"
+    | "subjects.speaking_mentoring";
+
+  const getSubjectKey = (val: string): ValidSubjectKey =>
+    `subjects.${val.toLowerCase().replace(/[\s\/]/g, "_")}` as ValidSubjectKey;
+
   return (
     <div className="space-y-2 group/field relative z-50">
       <label className="text-[10px] uppercase font-bold text-on-surface-variant tracking-[0.2em] px-1 group-focus-within/field:text-primary transition-colors">
-        Subject line
+        {t("subject_label")}
       </label>
       <div className="relative" ref={dropdownRef}>
         <button
@@ -34,7 +44,9 @@ export function SubjectDropdown({
           )}
         >
           <span className={cn(!selectedSubject && "text-outline/30 font-bold")}>
-            {selectedSubject || "Select Subject"}
+            {selectedSubject
+              ? t(getSubjectKey(selectedSubject))
+              : t("subject_placeholder")}
           </span>
           <span
             className={cn(
@@ -61,7 +73,7 @@ export function SubjectDropdown({
                     : "text-on-surface-variant hover:bg-white/5 hover:text-on-surface",
                 )}
               >
-                {option}
+                {t(getSubjectKey(option))}
                 {selectedSubject === option && (
                   <span className="material-symbols-outlined text-sm">
                     check

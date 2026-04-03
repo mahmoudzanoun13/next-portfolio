@@ -1,12 +1,14 @@
 import { TimelineItem } from "@/types/portfolio";
+import { getTranslations } from "next-intl/server";
 
 interface TimelineCardAchievementsProps {
   item: TimelineItem;
 }
 
-export function TimelineCardAchievements({
+export async function TimelineCardAchievements({
   item,
 }: TimelineCardAchievementsProps) {
+  const t = await getTranslations("Experience");
   return (
     <div className="flex flex-col gap-6">
       {item.description && (
@@ -21,7 +23,7 @@ export function TimelineCardAchievements({
             <span className="material-symbols-outlined text-primary text-base">
               terminal
             </span>
-            Key Achievements
+            {t("key_achievements")}
           </h3>
           <ul className="space-y-4">
             {item.highlights.map((h, i) => (

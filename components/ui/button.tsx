@@ -65,13 +65,33 @@ const ButtonInner = <E extends React.ElementType = "button">(
         />
       )}
       {!loading && icon && iconPosition === "left" && (
-        <span className="material-symbols-outlined text-lg" aria-hidden="true">
+        <span
+          className={cn(
+            "material-symbols-outlined text-lg",
+            (icon === "send" ||
+              icon === "arrow_forward" ||
+              icon === "arrow_back" ||
+              icon === "chat") &&
+              "rtl:scale-x-[-1]",
+          )}
+          aria-hidden="true"
+        >
           {icon}
         </span>
       )}
       {children}
       {!loading && icon && iconPosition === "right" && (
-        <span className="material-symbols-outlined text-lg" aria-hidden="true">
+        <span
+          className={cn(
+            "material-symbols-outlined text-lg",
+            (icon === "send" ||
+              icon === "arrow_forward" ||
+              icon === "arrow_back" ||
+              icon === "chat") &&
+              "rtl:scale-x-[-1]",
+          )}
+          aria-hidden="true"
+        >
           {icon}
         </span>
       )}

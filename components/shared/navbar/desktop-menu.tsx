@@ -1,6 +1,9 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/constants/navigation";
+import { useTranslations } from "next-intl";
 
 interface DesktopMenuProps {
   pathname: string;
@@ -8,6 +11,8 @@ interface DesktopMenuProps {
 }
 
 export function DesktopMenu({ pathname, className }: DesktopMenuProps) {
+  const t = useTranslations("Navigation");
+
   return (
     <div className={cn("hidden lg:flex flex-1 justify-center", className)}>
       <div className="flex items-center gap-10 font-headline font-bold tracking-tight">
@@ -23,7 +28,8 @@ export function DesktopMenu({ pathname, className }: DesktopMenuProps) {
             )}
             aria-current={pathname === link.href ? "page" : undefined}
           >
-            {link.label}
+            {/* Using the label as a key for translation - we need to match current keys in JSON */}
+            {t(link.label.toLowerCase())}
             <span
               className={cn(
                 "absolute -bottom-1 left-0 h-[2px] bg-primary transition-all duration-300",

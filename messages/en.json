@@ -1,0 +1,117 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "download_app": "Download App",
+    "context_language": "Context & Language",
+    "global_region": "Global Region"
+  },
+  "Common": {
+    "loading": "Loading..."
+  },
+  "Error": {
+    "title": "Something went <highlight>sideways</highlight>.",
+    "description": "An unexpected error occurred while processing your request. Our diagnostic systems have been notified.",
+    "hash": "Error Hash:",
+    "btn_recovery": "Attempt Recovery",
+    "btn_exit": "Emergency Exit",
+    "error": "An error occurred",
+    "back_to_home": "Back to Home"
+  },
+  "NotFound": {
+    "title": "You've wandered into <highlight>void</highlight>.",
+    "description": "The page you are looking for has been moved, deleted, or never existed. Let's get you back to the signal.",
+    "btn_return": "Return to Signal",
+    "btn_explore": "Explore Work"
+  },
+  "Metadata": {
+    "title_default": "Mahmoud Zanoun | Senior Frontend Specialist",
+    "title_template": "%s | Mahmoud Zanoun",
+    "description": "Architecting digital excellence with precision. Senior Frontend Developer specializing in React, Next.js, and architectural system design. 3+ years of experience delivering high-performance scalable web applications.",
+    "og_description": "Architecting digital excellence with precision. Specialized in React and Next.js.",
+    "site_name": "Mahmoud Zanoun Portfolio",
+    "locale": "en_US"
+  },
+  "Stats": {
+    "years_experience": "Years Experience",
+    "projects_delivered": "Projects Delivered",
+    "code_accuracy": "Code Accuracy",
+    "tech_stack_tools": "Tech Stack Tools"
+  },
+  "Hero": {
+    "badge": "Available for Innovation",
+    "title": "Architecting <highlight>Digital Excellence</highlight> as a Senior Frontend Developer",
+    "subtitle": "3 years of hands-on experience in building scalable, high-performance web applications. Specialized in <bold>React</bold> and <bold>Next.js</bold>, integrating <bold>AI tools</bold> to push the boundaries of modern user interfaces.",
+    "cta_work": "Explore My Work",
+    "cta_resume": "View Resume",
+    "core_technologies": "Core Technologies",
+    "install_web_app": "Install as Web App",
+    "install_desc": "Enjoy a seamless offline experience"
+  },
+  "Footer": {
+    "brand_desc": "Architecting digital excellence with precision and purpose. Focused on building the future of the web.",
+    "crafted_with_precision": "Crafted with Precision",
+    "location": "Ashmoun, Egypt"
+  },
+  "Projects": {
+    "tag": "My Portfolio",
+    "title": "My Recent Work",
+    "subtitle": "A selection of high-impact digital products built with a focus on performance, scalability, and exceptional user experience.",
+    "cta_vision": "Have a <highlight>vision</highlight> in mind?",
+    "cta_desc": "Let's collaborate to build something that pushes the boundaries of the modern web.",
+    "cta_button": "Let's Collaborate",
+    "explore_case": "Explore Case Study"
+  },
+  "Experience": {
+    "tag": "Career & Education",
+    "title": "My Journey",
+    "subtitle": "A professional trajectory defined by continuous learning, architectural precision, and a commitment to engineering excellence.",
+    "key_achievements": "Key Achievements",
+    "core_competencies": "Core Competencies"
+  },
+  "Contact": {
+    "tag": "Get In Touch",
+    "title": "Let's Build Something <italic>Extraordinary</italic>",
+    "subtitle": "Whether you're looking to architect a new digital product or transform an existing ecosystem, I'm ready to collaborate.",
+    "info": {
+      "email": "Email",
+      "phone": "Phone & WhatsApp",
+      "location": "Location",
+      "location_val": "Ashmoun, Egypt"
+    },
+    "pwa": {
+      "title": "Experience Offline",
+      "desc": "This portfolio is a fully functional <bold>Progressive Web App</bold>. Install it for a native app-like experience and seamless offline access.",
+      "desktop_guide": "Desktop Guide",
+      "desktop_desc": "Click the install icon in your address bar or use the browser menu.",
+      "mobile_guide": "Mobile Guide",
+      "mobile_desc": "Tap 'Add to Home Screen' from your browser's sharing menu on iOS or Android.",
+      "btn_install": "Install Web App"
+    },
+    "form": {
+      "name_label": "Your Name",
+      "name_placeholder": "John Doe",
+      "email_label": "Email Address",
+      "email_placeholder": "john@example.com",
+      "subject_label": "Subject",
+      "subject_placeholder": "Select a topic...",
+      "message_label": "Message Payload",
+      "message_placeholder": "Tell me about your project or inquiry...",
+      "btn_transmit": "Transmit Signal",
+      "btn_broadcasting": "Broadcasting...",
+      "header_title": "Send a Digital Signal",
+      "header_subtitle": "Fill out the form below and I'll respond personally to your inquiry.",
+      "subjects": {
+        "general_inquiry": "General Inquiry",
+        "project_proposal": "Project Proposal",
+        "technical_consultation": "Technical Consultation",
+        "speaking_mentoring": "Speaking/Mentoring"
+      },
+      "success_title": "Message <highlight>Received</highlight>",
+      "success_desc": "Thank you for reaching out. I've received your inquiry and will get back to you at mahmoudzanoun35@yahoo.com within 24 hours.",
+      "success_btn_reset": "Send Another"
+    }
+  }
+}

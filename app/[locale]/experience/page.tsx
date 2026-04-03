@@ -1,8 +1,10 @@
 import ExperienceTimeline from "@/components/experience/timeline";
 import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section";
+import { getTranslations } from "next-intl/server";
 
-export default function ExperiencePage() {
+export default async function ExperiencePage() {
+  const t = await getTranslations("Experience");
   return (
     <main className="pb-24 max-w-7xl mx-auto min-h-screen relative overflow-hidden">
       {/* Background decoration */}
@@ -11,9 +13,9 @@ export default function ExperiencePage() {
       <Section>
         {/* Section Header */}
         <PageHeader
-          tag="Career & Education"
-          title="My Journey"
-          subtitle="A professional trajectory defined by continuous learning, architectural precision, and a commitment to engineering excellence."
+          tag={t("tag")}
+          title={t("title")}
+          subtitle={t("subtitle")}
         />
 
         {/* Experience Timeline */}

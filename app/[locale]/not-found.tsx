@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function NotFound() {
+  const t = useTranslations("NotFound");
   return (
     <main className="relative min-h-screen tech-grid overflow-hidden">
       {/* Background decorative elements */}
@@ -32,18 +34,20 @@ export default function NotFound() {
 
         <div className="space-y-6 max-w-2xl">
           <h2 className="text-4xl md:text-6xl font-headline font-bold text-on-surface tracking-tighter italic">
-            You&apos;ve wandered into{" "}
-            <span className="text-primary italic">void</span>.
+            {t.rich("title", {
+              highlight: (chunks) => (
+                <span className="text-primary italic">{chunks}</span>
+              ),
+            })}
           </h2>
           <p className="text-on-surface-variant text-lg md:text-xl font-light leading-relaxed max-w-lg mx-auto">
-            The page you are looking for has been moved, deleted, or never
-            existed. Let&apos;s get you back to the signal.
+            {t("description")}
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 relative z-10 mt-12">
           <Button as={Link} href="/" variant="primary" size="xl" icon="home">
-            Return to Signal
+            {t("btn_return")}
           </Button>
           <Button
             as={Link}
@@ -52,7 +56,7 @@ export default function NotFound() {
             size="xl"
             icon="grid_view"
           >
-            Explore Work
+            {t("btn_explore")}
           </Button>
         </div>
       </Section>

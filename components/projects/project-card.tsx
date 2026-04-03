@@ -9,14 +9,16 @@ interface ProjectCardProps {
   image?: string;
   accent?: "primary" | "secondary" | "tertiary";
   priority?: boolean;
+  exploreText?: string;
 }
 
 import { ProjectCardTags } from "./card/project-card-tags";
 import { ProjectCardFeatures } from "./card/project-card-features";
 import { ProjectCardAction } from "./card/project-card-action";
 import { ProjectCardImage } from "./card/project-card-image";
+import { getLocale } from "next-intl/server";
 
-export default function ProjectCard({
+export default async function ProjectCard({
   title,
   description,
   tags,
@@ -25,7 +27,11 @@ export default function ProjectCard({
   image,
   accent = "primary",
   priority = false,
+  exploreText = "Explore Case Study",
 }: ProjectCardProps) {
+  const locale = await getLocale();
+  const isRtl = locale === "ar";
+
   const accentClasses = {
     primary:
       "border-primary/20 group-hover:border-primary group-hover:shadow-[0_0_50px_-10px_rgba(186,158,255,0.3)]",
@@ -54,7 +60,8 @@ export default function ProjectCard({
       >
         <div
           className={cn(
-            "absolute -top-24 -right-24 w-60 h-60 blur-[100px] opacity-20 pointer-events-none transition-opacity duration-700 group-hover:opacity-40",
+            "absolute -top-24 w-60 h-60 blur-[100px] opacity-20 pointer-events-none transition-opacity duration-700 group-hover:opacity-40",
+            isRtl ? "-left-24" : "-right-24",
             accent === "primary"
               ? "bg-primary"
               : accent === "secondary"
@@ -88,8 +95,10 @@ export default function ProjectCard({
           <ProjectCardAction
             title={title}
             link={link}
+            isRtl={isRtl}
             accent={accent}
             accentText={accentText[accent]}
+            exploreText={exploreText}
           />
         </div>
 

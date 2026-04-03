@@ -1,5 +1,9 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { LanguageSwitcher } from "../language-switcher";
+import { useTranslations } from "next-intl";
 
 interface NavActionsProps {
   isMenuOpen: boolean;
@@ -12,19 +16,16 @@ export function NavActions({
   toggleMenu,
   className,
 }: NavActionsProps) {
+  const t = useTranslations("Navigation");
+
   return (
     <div
       className={cn("flex items-center justify-end gap-3 md:gap-5", className)}
     >
-      <div className="hidden lg:flex items-center gap-6">
-        <button
-          className="text-slate-400 transition-colors text-xs font-black uppercase tracking-[0.2em] focus:outline-none hover:text-white"
-          aria-label="Toggle language"
-        >
-          EN
-        </button>
+      <div className="hidden lg:flex items-center gap-10">
+        <LanguageSwitcher />
         <Button size="md" variant="primary" icon="download">
-          Download APP
+          {t("download_app")}
         </Button>
       </div>
 

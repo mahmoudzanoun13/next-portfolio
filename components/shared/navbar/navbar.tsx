@@ -1,10 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useScroll } from "@/hooks/use-scroll";
 import { useLockScroll } from "@/hooks/use-lock-scroll";
+import { usePathname } from "@/i18n/routing";
 
 import { NavLogo } from "./nav-logo";
 import { DesktopMenu } from "./desktop-menu";
@@ -35,14 +35,14 @@ export default function Navbar() {
         aria-label="Main Navigation"
       >
         <div className="flex justify-between items-center w-full px-6 max-w-7xl mx-auto">
-          {/* Logo Wrapper - keeps logo space but centers hover on content */}
+          {/* Logo Wrapper */}
           <div className="flex-1 lg:w-1/4 flex justify-start">
             <NavLogo onClick={closeMenu} />
           </div>
 
           <DesktopMenu pathname={pathname} />
 
-          {/* Actions Wrapper - keeps space balanced */}
+          {/* Actions Wrapper */}
           <div className="flex-1 lg:w-1/4 flex justify-end">
             <NavActions isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           </div>

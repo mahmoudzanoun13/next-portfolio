@@ -1,12 +1,16 @@
 import ProjectCard from "@/components/projects/project-card";
-import { PORTFOLIO_DATA } from "@/constants/portfolio";
+import { getPortfolioData } from "@/constants/portfolio";
 import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import Link from "next/link";
+import { getTranslations, getLocale } from "next-intl/server";
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const locale = await getLocale();
+  const t = await getTranslations("Projects");
+  const portfolioData = getPortfolioData(locale);
   return (
     <main className="pb-24 max-w-7xl mx-auto min-h-screen relative overflow-hidden">
       {/* Background decoration */}
@@ -15,18 +19,19 @@ export default function ProjectsPage() {
       <Section>
         {/* Section Header */}
         <PageHeader
-          tag="My Portfolio"
-          title="My Recent Work"
-          subtitle="A selection of high-impact digital products built with a focus on performance, scalability, and exceptional user experience."
+          tag={t("tag")}
+          title={t("title")}
+          subtitle={t("subtitle")}
         />
 
         {/* Projects Grid */}
         <div className="relative z-10 flex flex-col gap-10">
-          {PORTFOLIO_DATA.projects.map((project, index) => (
+          {portfolioData.projects.map((project, index) => (
             <ProjectCard
               key={project.title}
               {...project}
               priority={index === 0}
+              exploreText={t("explore_case")}
             />
           ))}
         </div>
@@ -41,11 +46,14 @@ export default function ProjectsPage() {
           <div className="absolute inset-0 bg-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
           <div className="max-w-xl relative z-10 flex flex-col gap-5">
             <h2 className="text-5xl font-headline font-bold text-on-surface tracking-tighter">
-              Have a <span className="text-secondary">vision</span> in mind?
+              {t.rich("cta_vision", {
+                highlight: (chunks) => (
+                  <span className="text-secondary">{chunks}</span>
+                ),
+              })}
             </h2>
             <p className="text-lg text-on-surface-variant font-light leading-relaxed max-w-md mx-auto">
-              Let&apos;s collaborate to build something that pushes the
-              boundaries of the modern web.
+              {t("cta_desc")}
             </p>
           </div>
           <Button
@@ -55,7 +63,7 @@ export default function ProjectsPage() {
             variant="primary"
             icon="chat"
           >
-            Let&apos;s Collaborate
+            {t("cta_button")}
           </Button>
         </GlassCard>
       </Section>

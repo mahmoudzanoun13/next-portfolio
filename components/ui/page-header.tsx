@@ -6,7 +6,7 @@ type PageHeaderProps = Omit<React.HTMLAttributes<HTMLElement>, "title"> & {
   tag?: string;
   title: React.ReactNode;
   subtitle?: React.ReactNode;
-  alignment?: "left" | "center";
+  alignment?: "start" | "center";
 };
 
 export function PageHeader({
@@ -14,14 +14,16 @@ export function PageHeader({
   tag,
   title,
   subtitle,
-  alignment = "left",
+  alignment = "start",
   ...props
 }: PageHeaderProps) {
   return (
     <header
       className={cn(
-        "mb-24 relative z-10 w-full",
-        alignment === "center" ? "text-center" : "text-left",
+        "mb-24 relative z-10 w-full flex flex-col",
+        alignment === "center"
+          ? "text-center items-center"
+          : "text-start items-start",
         className,
       )}
       {...props}
@@ -42,7 +44,12 @@ export function PageHeader({
         {title}
       </h1>
       {subtitle && (
-        <p className="text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed font-light mx-auto md:mx-0">
+        <p
+          className={cn(
+            "text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed font-light mx-auto",
+            alignment === "start" ? "md:mx-0" : "",
+          )}
+        >
           {subtitle}
         </p>
       )}

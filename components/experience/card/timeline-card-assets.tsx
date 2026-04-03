@@ -3,12 +3,14 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { GlassCard } from "@/components/ui/glass-card";
 import { TimelineItem } from "@/types/portfolio";
+import { getTranslations } from "next-intl/server";
 
 interface TimelineCardAssetsProps {
   item: TimelineItem;
 }
 
-export function TimelineCardAssets({ item }: TimelineCardAssetsProps) {
+export async function TimelineCardAssets({ item }: TimelineCardAssetsProps) {
+  const t = await getTranslations("Experience");
   return (
     <div className="flex flex-col gap-8 h-full">
       {item.tech && (
@@ -17,7 +19,7 @@ export function TimelineCardAssets({ item }: TimelineCardAssetsProps) {
             <span className="material-symbols-outlined text-primary text-base">
               psychology
             </span>
-            Core Competencies
+            {t("core_competencies")}
           </h3>
           <ul
             className="flex flex-wrap gap-2"

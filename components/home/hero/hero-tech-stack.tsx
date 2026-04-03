@@ -2,11 +2,15 @@ import { cn } from "@/lib/utils";
 import { CORE_TECHS } from "@/constants/portfolio";
 import { Badge } from "@/components/ui/badge";
 
-export function HeroTechStack() {
+import { getTranslations } from "next-intl/server";
+
+export async function HeroTechStack() {
+  const t = await getTranslations("Hero");
+
   return (
     <div className="pt-12 space-y-4">
       <h2 className="text-xs uppercase tracking-[0.2em] text-outline font-bold">
-        Core Technologies
+        {t("core_technologies")}
       </h2>
       <div
         className="flex flex-wrap gap-3"

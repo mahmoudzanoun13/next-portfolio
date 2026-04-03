@@ -17,6 +17,7 @@ export function NavLogo({ onClick, className }: NavLogoProps) {
         className,
       )}
       aria-label="Mahmoud Zanoun - Home"
+      dir="ltr"
     >
       <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-xl border border-white/10 group-hover:border-primary/50 transition-all duration-500 shadow-lg">
         <Image

@@ -1,13 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getTranslations, getLocale } from "next-intl/server";
+import { cn } from "@/lib/utils";
 
-export function FooterBrand() {
+export async function FooterBrand() {
+  const t = await getTranslations("Footer");
+  const locale = await getLocale();
+  const isRtl = locale === "ar";
+
   return (
-    <div className="flex flex-col items-center md:items-start gap-8 md:gap-4 text-center md:text-left">
+    <div
+      className={cn(
+        "flex flex-col items-center gap-8 md:gap-4 text-center",
+        isRtl ? "md:items-start md:text-right" : "md:items-start md:text-left",
+      )}
+    >
       <Link
         href="/"
         className="flex items-center gap-3 group focus:outline-none rounded-lg"
         aria-label="Mahmoud Zanoun - Home"
+        dir="ltr"
       >
         <div className="relative w-12 h-12 overflow-hidden rounded-xl border border-white/10 shadow-lg bg-surface-container">
           <Image
@@ -18,7 +30,7 @@ export function FooterBrand() {
             className="object-cover scale-150 group-hover:scale-125 transition-transform duration-700"
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col text-left">
           <span className="text-base font-headline font-black text-[#ba9eff] tracking-tighter leading-none">
             MAHMOUD
           </span>
@@ -27,9 +39,14 @@ export function FooterBrand() {
           </span>
         </div>
       </Link>
-      <p className="max-w-xs text-on-surface-variant text-sm font-light leading-relaxed">
-        Architecting digital excellence with precision and purpose. Focused on
-        building the future of the web.
+      <p
+        className={cn(
+          "max-w-xs text-on-surface-variant text-sm font-light leading-relaxed",
+          isRtl ? "text-right" : "text-left",
+        )}
+        dir={isRtl ? "rtl" : "ltr"}
+      >
+        {t("brand_desc")}
       </p>
     </div>
   );

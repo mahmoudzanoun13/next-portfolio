@@ -2,12 +2,14 @@
 
 import { GlassCard } from "@/components/ui/glass-card";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 interface ContactFormSuccessProps {
   onReset: () => void;
 }
 
 export function ContactFormSuccess({ onReset }: ContactFormSuccessProps) {
+  const t = useTranslations("Contact.form");
   return (
     <GlassCard
       variant="medium"
@@ -21,15 +23,18 @@ export function ContactFormSuccess({ onReset }: ContactFormSuccessProps) {
       </div>
       <div className="space-y-4">
         <h2 className="text-3xl font-headline font-bold text-on-surface tracking-tight">
-          Message <span className="text-primary italic">Received</span>
+          {t.rich("success_title", {
+            highlight: (chunks) => (
+              <span className="text-primary italic">{chunks}</span>
+            ),
+          })}
         </h2>
         <p className="text-on-surface-variant max-w-sm mx-auto leading-relaxed">
-          Thank you for reaching out. I&apos;ve received your inquiry and will
-          get back to you at mahmoudzanoun35@yahoo.com within 24 hours.
+          {t("success_desc")}
         </p>
       </div>
       <Button variant="outline" onClick={onReset} icon="undo">
-        Send Another
+        {t("success_btn_reset")}
       </Button>
     </GlassCard>
   );

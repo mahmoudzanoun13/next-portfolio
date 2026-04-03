@@ -16,6 +16,8 @@ interface ContactFormFieldProps {
   ) => void;
 }
 
+import { useLocale } from "next-intl";
+
 export function ContactFormField({
   id,
   label,
@@ -29,6 +31,8 @@ export function ContactFormField({
 }: ContactFormFieldProps) {
   const isTextArea = type === "textarea";
   const InputTag = isTextArea ? "textarea" : "input";
+  const locale = useLocale();
+  const isRtl = locale === "ar";
 
   return (
     <div className="space-y-2 group/field">
@@ -54,7 +58,8 @@ export function ContactFormField({
         type={!isTextArea ? type : undefined}
         className={cn(
           "w-full bg-white/5 border rounded-xl px-4 py-4 text-on-surface placeholder:text-outline/30 focus:outline-none focus:bg-white/8 transition-all",
-          isTextArea && "resize-y min-h-[120px] max-h-[584px]",
+          isTextArea && "resize-y min-h-[120px]",
+          isTextArea && (isRtl ? "max-h-[550px]" : "max-h-[576px]"),
           error
             ? "border-error/50 focus:border-error"
             : "border-white/10 focus:border-primary/50",

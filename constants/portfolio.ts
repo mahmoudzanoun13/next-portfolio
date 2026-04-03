@@ -1,6 +1,6 @@
 import { PortfolioData } from "@/types/portfolio";
 
-export const PORTFOLIO_DATA: PortfolioData = {
+export const EN_PORTFOLIO_DATA: PortfolioData = {
   stats: [
     { label: "Years Experience", value: "3+" },
     { label: "Projects Delivered", value: "8+" },
@@ -144,6 +144,156 @@ export const PORTFOLIO_DATA: PortfolioData = {
       ],
     },
   ],
+};
+
+export const AR_PORTFOLIO_DATA: PortfolioData = {
+  stats: [
+    { label: "سنوات الخبرة", value: "+3" },
+    { label: "مشاريع منجزة", value: "+8" },
+    { label: "دقة الكود", value: "95%" },
+    { label: "أدوات تقنية", value: "+15" },
+  ],
+  projects: [
+    {
+      title: "Adepti",
+      description:
+        "منصة داخلية للمواهب محسنة للمقياس المؤسسي. قدت بنية الواجهة الأمامية، ونفذت نظامًا ثنائي اللغة (إنجليزي/هولندي) شاملاً وآليات تصفية متطورة متعددة الطبقات.",
+      tags: [
+        "SaaS",
+        "إدارة المواهب",
+        "ثنائي اللغة",
+        "React",
+        "MUI",
+        "Redux",
+        "React Query",
+      ],
+      features: [
+        "دعم ثنائي اللغة (EN/NL)",
+        "تصفية متعددة الطبقات",
+        "بنية مؤسسية قابلة للتوسع",
+      ],
+      link: "https://www.adepti.co",
+      image: "/assets/projects/adepti.png",
+      accent: "primary",
+    },
+    {
+      title: "Taheiya",
+      description:
+        "منصة SaaS شاملة للمحاسبين. هندست نظام اتصال قوي في الوقت الفعلي ودعم كامل للغة العربية (RTL). ابتكرت سير عمل عالي الكفاءة من Figma إلى كود.",
+      tags: [
+        "SaaS",
+        "العمل الحر للمحاسبين",
+        "اتصال في الوقت الفعلي",
+        "RTL",
+        "Next.js",
+        "Tailwind CSS",
+        "Zustand",
+        "React Query",
+      ],
+      features: [
+        "اتصال في الوقت الفعلي",
+        "دعم كامل لـ RTL",
+        "واجهة مستخدم SaaS محسنة",
+      ],
+      link: "https://mohaseb.sa",
+      image: "/assets/projects/taheiya.png",
+      accent: "secondary",
+    },
+    {
+      title: "Science Toonz",
+      description:
+        "منصة تعليمية قوية تجمع بين دروس الفيديو التفاعلية والتقييمات اللحظية المدعومة بالذكاء الاصطناعي. تم دمج OpenRouter AI لتقديم مراجعات مخصصة وإنشاء اختبارات ديناميكية.",
+      tags: [
+        "الذكاء الاصطناعي",
+        "التعليم",
+        "تفاعلي",
+        "React",
+        "MUI",
+        "Jotai",
+        "RTQuery",
+      ],
+      features: [
+        "دروس فيديو تفاعلية",
+        "تقييمات مدعومة بالذكاء الاصطناعي",
+        "دمج OpenRouter",
+      ],
+      link: "https://sciencetoonz.com",
+      image: "/assets/projects/science-toonz.png",
+      accent: "tertiary",
+    },
+  ],
+  experience: [
+    {
+      type: "experience",
+      icon: "work",
+      period: "الحاضر — 2023",
+      title: "مطور واجهات أمامية",
+      company: "GenTech",
+      companyLink: "https://gen-tech.io",
+      highlights: [
+        {
+          text: "قيادة تطوير 4 تطبيقات إنتاجية من المخطط المعماري إلى النشر.",
+          focus: "4 تطبيقات إنتاجية",
+        },
+        {
+          text: "هندسة أنظمة دعم متعددة اللغات للوصول إلى السوق العالمية.",
+          focus: "أنظمة دعم متعددة اللغات",
+        },
+        {
+          text: "بناء مكتبات مكونات داخلية قوية تُستخدم عبر جميع المنتجات الرقمية للشركة.",
+          focus: "مكتبات مكونات داخلية",
+        },
+        {
+          text: "المساهمة في مشروعين مستمرين، بتقديم ميزات ومكونات رئيسية",
+          focus: "مشروعين مستمرين",
+        },
+        {
+          text: "تنفيذ تحليل ثابت للكود باستخدام SonarQube لتحسين جودة الكود عبر المشاريع.",
+          focus: "SonarQube"
+        },
+      ],
+      tech: ["React", "Next.js", "System Design", "Tailwind CSS", "TypeScript"],
+      image: "/assets/experience-visual.png",
+    },
+    {
+      type: "education",
+      icon: "school",
+      period: "2021 — 2022",
+      title: "تطوير الويب",
+      company: "أكاديمية ZTM",
+      description:
+        "انغماس متقدم في نماذج الـ Full-Stack، مع التركيز على MERN وهندسة واجهات المستخدم الحديثة. إتقان إدارة الحالة، تكامل الواجهة الخلفية، وأنماط التصميم المتجاوب.",
+      metrics: [
+        { label: "تم إكمال الشهادة", icon: "verified" },
+        { label: "خريج من الدرجة الأولى", icon: "grade" },
+      ],
+      visual: [
+        {
+          type: "icon-box",
+          icon: "workspace_premium",
+          color: "from-secondary/20 to-secondary/5",
+          iconColor: "text-secondary",
+        },
+      ],
+    },
+    {
+      type: "education",
+      icon: "history_edu",
+      period: "2020 — 2021",
+      title: "علوم الحاسب",
+      company: "جامعة هارفارد (CS50)",
+      description:
+        "بناء أساس الفهم المنطقي. التعمق في إدارة الذاكرة، الخوارزميات، وهياكل البيانات باستخدام C و Python و SQL. تطوير نهج صارم لحل المشكلات.",
+      stats: [
+        { label: "التعقيد", value: "O(log n)" },
+        { label: "إتقان المنطق", value: "100%" },
+      ],
+    },
+  ],
+};
+
+export const getPortfolioData = (locale: string): Readonly<PortfolioData> => {
+  return locale === "ar" ? AR_PORTFOLIO_DATA : EN_PORTFOLIO_DATA;
 };
 
 export const CONTACT_INFO = [

@@ -1,7 +1,9 @@
 import { CONTACT_INFO } from "@/constants/portfolio";
 import { SOCIAL_LINKS } from "@/constants/navigation";
+import { getTranslations } from "next-intl/server";
 
-export function ContactInfoGrid() {
+export async function ContactInfoGrid() {
+  const t = await getTranslations("Contact.info");
   return (
     <div className="flex flex-col gap-6">
       {CONTACT_INFO.map((info) => (
@@ -20,10 +22,16 @@ export function ContactInfoGrid() {
             </div>
             <div className="flex flex-col gap-1">
               <span className="text-[10px] uppercase font-bold text-on-surface-variant tracking-[0.4em] mb-1">
-                {info.label}
+                {t(
+                  info.label === "Email"
+                    ? "email"
+                    : info.label === "Location"
+                      ? "location"
+                      : "phone",
+                )}
               </span>
               <span className="text-xl md:text-2xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors break-all md:break-normal">
-                {info.value}
+                {info.label === "Location" ? t("location_val") : info.value}
               </span>
             </div>
           </div>

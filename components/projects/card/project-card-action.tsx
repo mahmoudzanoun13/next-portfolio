@@ -3,15 +3,19 @@ import { cn } from "@/lib/utils";
 interface ProjectCardActionProps {
   title: string;
   link: string;
+  isRtl: boolean;
   accent: "primary" | "secondary" | "tertiary";
   accentText: string;
+  exploreText: string;
 }
 
 export function ProjectCardAction({
   title,
   link,
+  isRtl,
   accent,
   accentText,
+  exploreText,
 }: ProjectCardActionProps) {
   return (
     <div className="mt-auto pt-10">
@@ -30,9 +34,9 @@ export function ProjectCardAction({
         )}
         aria-label={`Explore the ${title} case study (opens in new tab)`}
       >
-        Explore Case Study
+        {exploreText}
         <span className="material-symbols-outlined text-lg" aria-hidden="true">
-          arrow_forward
+          {isRtl ? "arrow_back" : "arrow_forward"}
         </span>
       </a>
     </div>
