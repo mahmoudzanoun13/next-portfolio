@@ -2,6 +2,21 @@ import ExperienceTimeline from "@/components/experience/timeline";
 import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section";
 import { getTranslations } from "next-intl/server";
+import { getMetadataConfig } from "@/constants/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("Metadata");
+
+  return {
+    ...getMetadataConfig(t, locale, "/experience"),
+    title: t("title_template").replace("%s", "Experience"),
+  };
+}
 
 export default async function ExperiencePage() {
   const t = await getTranslations("Experience");

@@ -4,6 +4,21 @@ import { ContactInfoGrid } from "@/components/contact/contact-info-grid";
 import { PwaInstallCard } from "@/components/contact/pwa-install-card";
 import { ContactForm } from "@/components/contact/contact-form";
 import { getTranslations } from "next-intl/server";
+import { getMetadataConfig } from "@/constants/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("Metadata");
+
+  return {
+    ...getMetadataConfig(t, locale, "/contact"),
+    title: t("title_template").replace("%s", "Contact"),
+  };
+}
 
 export default async function ContactPage() {
   const t = await getTranslations("Contact");

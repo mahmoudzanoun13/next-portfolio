@@ -6,6 +6,21 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import Link from "next/link";
 import { getTranslations, getLocale } from "next-intl/server";
+import { getMetadataConfig } from "@/constants/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("Metadata");
+
+  return {
+    ...getMetadataConfig(t, locale, "/projects"),
+    title: t("title_template").replace("%s", "Projects"),
+  };
+}
 
 export default async function ProjectsPage() {
   const locale = await getLocale();

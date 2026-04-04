@@ -19,6 +19,8 @@ export type MetadataTranslationKeys =
 
 export const getMetadataConfig = (
   t: (key: MetadataTranslationKeys) => string,
+  locale: string = "en",
+  path: string = "",
 ): Metadata => ({
   title: {
     default: t("title_default"),
@@ -45,7 +47,12 @@ export const getMetadataConfig = (
   },
   metadataBase: new URL(PORTFOLIO_METADATA_BASE),
   alternates: {
-    canonical: "/",
+    canonical: `/${locale}${path}`,
+    languages: {
+      en: `/en${path}`,
+      ar: `/ar${path}`,
+      "x-default": `/en${path}`,
+    },
   },
   icons: {
     icon: "/assets/logo.png",
@@ -59,12 +66,21 @@ export const getMetadataConfig = (
     siteName: t("site_name"),
     locale: t("locale"),
     type: "website",
+    images: [
+      {
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: t("title_default"),
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: t("title_default"),
     description: t("og_description"),
     creator: "@mahmoudzanoun",
+    images: ["/assets/og-image.png"],
   },
   category: "technology",
 });

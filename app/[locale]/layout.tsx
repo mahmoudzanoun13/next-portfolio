@@ -28,10 +28,15 @@ const cairo = Cairo({
 
 export const viewport = VIEWPORT_CONFIG;
 
-export async function generateMetadata() {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations("Metadata");
 
-  return getMetadataConfig(t);
+  return getMetadataConfig(t, locale);
 }
 
 export default async function RootLayout({
