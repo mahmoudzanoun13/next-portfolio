@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { GlassCard } from "@/components/ui/glass-card";
 import { getTranslations } from "next-intl/server";
+import { InstallHint } from "./install-hint";
 
 export async function HeroVisual() {
   const t = await getTranslations("Hero");
@@ -67,33 +68,6 @@ function CodeSnippetCard() {
         </div>
         <div>{"};"}</div>
       </div>
-    </GlassCard>
-  );
-}
-
-function InstallHint({ title, desc }: { title: string; desc: string }) {
-  return (
-    <GlassCard
-      variant="medium"
-      className="mt-8 p-4 flex items-center justify-between group cursor-pointer hover:border-secondary/40"
-      role="button"
-      aria-label="Install as Web App for offline experience"
-    >
-      <div className="flex items-center gap-4">
-        <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
-          <span className="material-symbols-outlined">install_desktop</span>
-        </div>
-        <div>
-          <h4 className="text-sm font-bold text-on-surface">{title}</h4>
-          <p className="text-xs text-on-surface-variant">{desc}</p>
-        </div>
-      </div>
-      <span
-        className="material-symbols-outlined text-outline group-hover:text-secondary transition-colors"
-        aria-hidden="true"
-      >
-        download
-      </span>
     </GlassCard>
   );
 }

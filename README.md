@@ -20,6 +20,17 @@ _Tested in pure production incognito against all key pages:_
 
 ---
 
+## 📱 Progressive Web App (PWA)
+
+This portfolio is a fully functional, production-ready PWA, designed for a native-like experience on all devices.
+
+- **Offline Resilience:** Custom-built "Signal Lost" fallback and persistent caching ensures the site works without an internet connection.
+- **Tiered Caching:** High-performance Service Worker implementing deterministic Cache-First and Stale-While-Revalidate strategies.
+- **Native Installation:** Custom UI hooks to trigger the official browser/OS installation dialog.
+- **Optimized for Home Screen:** Clean branding with `short_name: "Mahmoud Z"` for perfect mobile icon labels.
+
+---
+
 ## 💻 Tech Stack & Tooling
 
 - **Framework:** Next.js 16 (App Router + Turbopack)
@@ -27,7 +38,8 @@ _Tested in pure production incognito against all key pages:_
 - **Styling:** Tailwind CSS (Strict Logical Properties)
 - **UI Prototyping & Generation:** Designed entirely with **[Stitch](https://github.com/google-labs-code/stitch-skills)** to architect pixel-perfect layouts before coding.
 - **Internationalization:** `next-intl` (Edge Proxy Architecture)
-- **Form Handling & Broadcasting:** EmailJS + Functional React Hooks
+- **Form Handling:** EmailJS + Functional React Hooks
+- **PWA Management:** Native Manifest Generator + Custom Service Worker
 - **Package Manager & Runtime:** `bun`
 
 ---

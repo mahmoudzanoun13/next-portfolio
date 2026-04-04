@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { NAV_LINKS } from "@/constants/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { LanguageSwitcher } from "../language-switcher";
+import { usePwa } from "@/hooks/use-pwa";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -17,6 +18,7 @@ export function MobileMenu({ isOpen, onClose, pathname }: MobileMenuProps) {
   const t = useTranslations("Navigation");
   const locale = useLocale();
   const isRtl = locale === "ar";
+  const { install, isInstallable } = usePwa();
 
   return (
     <div
@@ -68,14 +70,17 @@ export function MobileMenu({ isOpen, onClose, pathname }: MobileMenuProps) {
             </div>
           </div>
 
-          <Button
-            size="xl"
-            className="w-full py-7 text-lg group-hover:shadow-[0_0_40px_-5px_rgba(186,158,255,0.4)]"
-            icon="download"
-            variant="primary"
-          >
-            {t("download_app")}
-          </Button>
+          {isInstallable && (
+            <Button
+              size="xl"
+              className="w-full py-7 text-lg group-hover:shadow-[0_0_40px_-5px_rgba(186,158,255,0.4)]"
+              icon="download"
+              variant="primary"
+              onClick={install}
+            >
+              {t("download_app")}
+            </Button>
+          )}
         </div>
       </div>
     </div>

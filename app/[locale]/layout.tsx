@@ -5,6 +5,7 @@ import Footer from "@/components/shared/footer/footer";
 import { getMetadataConfig, VIEWPORT_CONFIG } from "@/constants/metadata";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
+import { PwaRegistry } from "@/components/pwa/pwa-registry";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
@@ -71,10 +72,14 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
         />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Mahmoud Z" />
       </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${cairo.variable} antialiased bg-[#0f072e] text-on-surface selection:bg-primary/30 selection:text-white overflow-x-hidden min-h-screen flex flex-col ${isRtl ? "font-cairo" : ""}`}
       >
+        <PwaRegistry />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <div className="flex-1 flex flex-col pt-24 lg:pt-32">{children}</div>
