@@ -2,12 +2,9 @@ import { Link } from "@/i18n/routing";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getTranslations } from "next-intl/server";
-import { getLocale } from "next-intl/server";
 
 export async function HeroContent() {
   const t = await getTranslations("Hero");
-  const locale = await getLocale();
-  const isRtl = locale === "ar";
 
   return (
     <div className="lg:col-span-12 xl:col-span-7 space-y-8">
@@ -50,7 +47,7 @@ export async function HeroContent() {
           href="/projects"
           size="lg"
           variant="primary"
-          icon={isRtl ? "arrow_back" : "arrow_forward"}
+          icon="arrow_forward"
           iconPosition="right"
           className="w-full sm:w-auto overflow-hidden group/btn"
           aria-label="Explore my project portfolio"
