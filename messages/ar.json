@@ -31,8 +31,11 @@
     "title_template": "%s | محمود زنون",
     "description": "هندسة التميز الرقمي بدقة. مطور واجهات أمامية محترف متخصص في React، Next.js، وتصميم النظم المعمارية. أكثر من 3 سنوات من خبرة في تطوير تطبيقات ويب عالية الأداء.",
     "og_description": "هندسة التميز الرقمي بدقة. متخصص في React و Next.js.",
-    "site_name": "محفظة محمود زنون",
-    "locale": "ar_EG"
+    "site_name": "معرض أعمال محمود زنون",
+    "locale": "ar_EG",
+    "title_projects": "المشاريع",
+    "title_experience": "الخبرة",
+    "title_contact": "تواصل معي"
   },
   "Stats": {
     "years_experience": "سنوات الخبرة",

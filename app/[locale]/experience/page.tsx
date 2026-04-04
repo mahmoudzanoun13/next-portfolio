@@ -14,7 +14,7 @@ export async function generateMetadata({
 
   return {
     ...getMetadataConfig(t, locale, "/experience"),
-    title: t("title_template").replace("%s", "Experience"),
+    title: t("title_experience"),
   };
 }
 

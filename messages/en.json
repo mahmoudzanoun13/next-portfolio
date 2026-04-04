@@ -32,7 +32,10 @@
     "description": "Architecting digital excellence with precision. Senior Frontend Developer specializing in React, Next.js, and architectural system design. 3+ years of experience delivering high-performance scalable web applications.",
     "og_description": "Architecting digital excellence with precision. Specialized in React and Next.js.",
     "site_name": "Mahmoud Zanoun Portfolio",
-    "locale": "en_US"
+    "locale": "en_US",
+    "title_projects": "Projects",
+    "title_experience": "Experience",
+    "title_contact": "Contact"
   },
   "Stats": {
     "years_experience": "Years Experience",

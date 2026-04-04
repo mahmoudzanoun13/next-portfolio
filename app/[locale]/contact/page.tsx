@@ -16,7 +16,7 @@ export async function generateMetadata({
 
   return {
     ...getMetadataConfig(t, locale, "/contact"),
-    title: t("title_template").replace("%s", "Contact"),
+    title: t("title_contact"),
   };
 }
 
