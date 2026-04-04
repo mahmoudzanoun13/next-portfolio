@@ -31,7 +31,7 @@ export function NavActions({
 
       {/* Mobile Menu Toggle */}
       <button
-        className="lg:hidden w-12 h-12 flex flex-col items-center justify-center gap-1.5 focus:outline-none group relative z-50 rounded-full hover:bg-white/5 transition-colors"
+        className="lg:hidden w-12 h-12 flex flex-col items-center justify-center gap-1.5 focus:outline-none group relative z-50 rounded-full hover:bg-white/5 transition-colors cursor-pointer"
         onClick={toggleMenu}
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMenuOpen}
