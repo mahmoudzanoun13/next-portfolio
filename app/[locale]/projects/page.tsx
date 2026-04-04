@@ -60,7 +60,7 @@ export default async function ProjectsPage() {
         >
           <div className="absolute inset-0 bg-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
           <div className="max-w-xl relative z-10 flex flex-col gap-5">
-            <h2 className="text-5xl font-headline font-bold text-on-surface tracking-tighter">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-headline font-bold text-on-surface tracking-tighter">
               {t.rich("cta_vision", {
                 highlight: (chunks) => (
                   <span className="text-secondary">{chunks}</span>

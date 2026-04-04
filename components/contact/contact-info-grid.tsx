@@ -20,7 +20,7 @@ export async function ContactInfoGrid() {
                 {info.icon}
               </span>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 min-w-0">
               <span className="text-[10px] uppercase font-bold text-on-surface-variant tracking-[0.4em] mb-1">
                 {t(
                   info.label === "Email"
@@ -30,7 +30,7 @@ export async function ContactInfoGrid() {
                       : "phone",
                 )}
               </span>
-              <span className="text-xl md:text-2xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors break-all md:break-normal">
+              <span className="text-lg md:text-2xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors break-all lg:break-normal">
                 {info.label === "Location" ? t("location_val") : info.value}
               </span>
             </div>
