@@ -9,5 +9,6 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/(ar|en)/:path*", "/((?!api|_next|_vercel|.*\\..*).*)"],
+  // Use a regex to match only the paths that should be handled by the middleware
+  matcher: ["/(ar|en)/:path*", "/"],
 };
