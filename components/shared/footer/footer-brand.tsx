@@ -41,8 +41,8 @@ export async function FooterBrand() {
       </Link>
       <p
         className={cn(
-          "max-w-xs text-on-surface-variant text-sm font-light leading-relaxed",
-          isRtl ? "text-right" : "text-left",
+          "max-w-xs text-on-surface-variant text-center text-sm font-light leading-relaxed",
+          isRtl ? "md:text-right" : "md:text-left",
         )}
         dir={isRtl ? "rtl" : "ltr"}
       >
