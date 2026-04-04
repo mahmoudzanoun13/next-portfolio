@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://mahmoud-zanoun.vercel.app/sitemap.xml
+Sitemap: https://portfolio-mahmoud-zanoun.vercel.app/sitemap.xml

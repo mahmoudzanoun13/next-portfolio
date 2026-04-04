@@ -1,6 +1,6 @@
 import { Metadata, Viewport } from "next";
 
-export const PORTFOLIO_METADATA_BASE = "https://mahmoud-zanoun.vercel.app";
+export const PORTFOLIO_METADATA_BASE = "https://portfolio-mahmoud-zanoun.vercel.app";
 
 export const VIEWPORT_CONFIG: Viewport = {
   themeColor: "#0f072e",
