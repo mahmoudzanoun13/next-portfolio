@@ -40,7 +40,7 @@ export default async function ProjectsPage() {
         />
 
         {/* Projects Grid */}
-        <div className="relative z-10 flex flex-col gap-10">
+        <div className="relative z-10 flex flex-col gap-10 w-full max-w-full">
           {portfolioData.projects.map((project, index) => (
             <ProjectCard
               key={project.title}
@@ -54,7 +54,7 @@ export default async function ProjectsPage() {
         {/* Call to action */}
         <GlassCard
           variant="medium"
-          className="mt-40 p-16 flex flex-col items-center justify-center text-center gap-10 group overflow-hidden"
+          className="mt-40 px-6 py-12 md:p-16 flex flex-col items-center justify-center text-center gap-10 group overflow-hidden w-full max-w-full"
           role="region"
           aria-label="Collaboration Call to Action"
         >

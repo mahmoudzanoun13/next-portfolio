@@ -71,16 +71,16 @@ export default async function ProjectCard({
           aria-hidden="true"
         />
 
-        <div className="flex-1 flex flex-col gap-8 relative z-10">
-          <div className="flex flex-col gap-5">
+        <div className="flex-1 flex flex-col gap-8 relative z-10 w-full min-w-0">
+          <div className="flex flex-col gap-5 w-full">
             <ProjectCardTags tags={tags} accent={accent} />
             <h2
               id={`project-${title.toLowerCase().replace(/\s+/g, "-")}`}
-              className="text-3xl md:text-5xl font-headline text-on-surface leading-tight tracking-tight mt-2 italic font-normal"
+              className="text-3xl sm:text-4xl md:text-5xl font-headline text-on-surface leading-tight tracking-tight mt-2 italic font-normal wrap-break-word"
             >
               {title}
             </h2>
-            <p className="text-on-surface-variant leading-relaxed text-lg font-light max-w-lg">
+            <p className="text-on-surface-variant leading-relaxed text-lg font-light max-w-full">
               {description}
             </p>
           </div>
