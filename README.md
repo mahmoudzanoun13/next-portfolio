@@ -12,7 +12,7 @@ _Tested in pure production incognito against all key pages:_
 
 | Home Page                                                                                  | Projects Page                                                                                      |
 | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| <img src="./public/assets/lighthouse/home.png" alt="Home Lighthouse 98 Score" width="400"> | <img src="./public/assets/lighthouse/projects.png" alt="Projects Lighthouse 99 Score" width="400"> |
+| <img src="./public/assets/lighthouse/home.png" alt="Home Lighthouse 99 Score" width="400"> | <img src="./public/assets/lighthouse/projects.png" alt="Projects Lighthouse 99 Score" width="400"> |
 
 | Experience Page                                                                                        | Contact Page                                                                                     |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
