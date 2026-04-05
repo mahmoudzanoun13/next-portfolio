@@ -5,43 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Offline | Mahmoud Zanoun</title>
   <style>
+    :root {
+      --background: #0f072e;
+      --primary: #ba9eff;
+      --secondary: #53ddfc;
+      --text: #e9e1ff;
+      --on-surface-variant: #aea5d4;
+    }
     body {
-      background-color: #0f072e;
-      color: #ffffff;
-      font-family: system-ui, sans-serif;
+      background-color: var(--background);
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(186, 158, 255, 0.05) 0%, rgba(15, 7, 46, 0) 70%);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
+      margin: 1.5rem;
+      padding: 1.5rem;
+      box-sizing: border-box;
       text-align: center;
     }
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      border-radius: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      max-width: 400px;
+      background: rgba(27, 17, 64, 0.4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 2.5rem 1.5rem;
+      border-radius: 2rem;
+      border: 1px solid rgba(186, 158, 255, 0.1);
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      position: relative;
     }
-    h1 { color: #8a2be2; margin-top: 0; }
-    p { color: rgba(255, 255, 255, 0.7); }
+    .icon {
+      background: rgba(186, 158, 255, 0.1);
+      width: 80px;
+      height: 80px;
+      border-radius: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      color: var(--secondary);
+    }
+    svg { width: 40px; height: 40px; }
+    h1 { 
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      margin: 0 0 1rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+    p { 
+      color: var(--on-surface-variant);
+      line-height: 1.6;
+      font-weight: 300;
+      margin: 0 0 2rem;
+    }
     button {
-      background: #8a2be2;
-      color: white;
+      background: var(--primary);
+      color: #39008c;
       border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       cursor: pointer;
-      margin-top: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px -5px rgba(186, 158, 255, 0.3);
+      width: 100%;
     }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -10px rgba(186, 158, 255, 0.5);
+      background: #cbb6ff;
+    }
+    button:active { transform: translateY(0); }
   </style>
 </head>
 <body>
   <div class="card">
+    <div class="icon">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0-12.728L5.636 18.364m12.728 0a9 9 0 01-12.728 0m12.728 0L5.636 5.636m0 0a9 9 0 0112.728 0"></path>
+      </svg>
+    </div>
     <h1>Signal Lost</h1>
-    <p>You are currently offline. Please check your network connection and try again.</p>
+    <p>You're currently exploring the void. Please check your internet connection to return to the portfolio.</p>
     <button onclick="window.location.reload()">Retry Connection</button>
   </div>
 </body>
