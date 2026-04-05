@@ -1,0 +1,36 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  quality-gate:
+    name: ✅ Quality & Build Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚡ Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: 📦 Install Dependencies
+        run: bun install --frozen-lockfile
+
+      - name: 🔍 Lint Check
+        run: bun run lint
+
+      - name: 🏗️ Type Check
+        run: bun run type-check
+
+      - name: 🚀 Production Build
+        run: bun run build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ github.event.pull_request.head.repo.html_url || 'https://portfolio-mahmoud-zanoun.vercel.app' }}
+          NODE_ENV: production

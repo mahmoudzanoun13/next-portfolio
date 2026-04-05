@@ -24,6 +24,7 @@ _Tested in pure production incognito against all key pages:_
 
 - **Framework:** Next.js 16 (App Router + Turbopack)
 - **Language:** TypeScript
+- **CI/CD:** GitHub Actions (Automated Quality Gate)
 - **Styling:** Tailwind CSS (Strict Logical Properties)
 - **UI Prototyping & Generation:** Designed entirely with **[Stitch](https://github.com/google-labs-code/stitch-skills)** to architect pixel-perfect layouts before coding.
 - **Internationalization:** `next-intl` (Edge Proxy Architecture)
@@ -48,7 +49,19 @@ This repository relies exclusively on the **Bun runtime**.
    bun dev
    ```
 
-3. **Build for Production:**
+3. **Type Check:**
+
+   ```bash
+   bun run type-check
+   ```
+
+4. **Lint Check:**
+
+   ```bash
+   bun run lint
+   ```
+
+5. **Build for Production:**
    ```bash
    bun run build
    bun run start
@@ -56,9 +69,12 @@ This repository relies exclusively on the **Bun runtime**.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to witness the result.
 
+---
+
 ## 🌍 Core Architecture Highlights
 
 - **AI-Augmented Design:** Every core component, layout boundary, and interactive state was initially modeled utilizing advanced structural generation via the **Stitch MCP** framework before rigorous manual React implementation.
+- **Automated CI/CD:** Integrated GitHub Actions pipeline that enforces linting, type safety, and production build success for every Pull Request.
 - **Native Edge Internationalization:** Replaced traditional heavy HOCs with full-stack Next.js 16 Middleware (Proxy) fallbacks.
 - **RTL Fluidity:** Tailwind physical directions entirely ripped out and replaced with strict `start`, `end`, and `inset-s` classes for perfect mirroring.
 - **Micro-Optimization:** Sub-10ms reconciliation via heavily constrained `useCallback` Hook memoization and strict `React.memo` barrier components.
