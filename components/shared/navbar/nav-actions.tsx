@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "../language-switcher";
 import { useTranslations } from "next-intl";
+import { usePwa } from "@/hooks/use-pwa";
 
 interface NavActionsProps {
   isMenuOpen: boolean;
@@ -17,6 +18,7 @@ export function NavActions({
   className,
 }: NavActionsProps) {
   const t = useTranslations("Navigation");
+  const { install, isInstallable } = usePwa();
 
   return (
     <div
@@ -24,9 +26,11 @@ export function NavActions({
     >
       <div className="hidden lg:flex items-center gap-10">
         <LanguageSwitcher />
-        <Button size="md" variant="primary" icon="download">
-          {t("download_app")}
-        </Button>
+        {isInstallable && (
+          <Button size="md" variant="primary" icon="download" onClick={install}>
+            {t("download_app")}
+          </Button>
+        )}
       </div>
 
       {/* Mobile Menu Toggle */}
