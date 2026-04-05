@@ -98,8 +98,8 @@ export const EN_PORTFOLIO_DATA: PortfolioData = {
           focus: "internal component libraries",
         },
         {
-          text: "Contributed to 2 ongoing projects, delivering key features and components",
-          focus: "2 ongoing projects",
+          text: "Contributed to other 4 projects, delivering key features and components",
+          focus: "other 4 projects",
         },
         {
           text: "Implemented static code analysis using SonarQube to improve code quality across projects.",
@@ -244,8 +244,8 @@ export const AR_PORTFOLIO_DATA: PortfolioData = {
           focus: "مكتبات مكونات داخلية",
         },
         {
-          text: "المساهمة في مشروعين مستمرين، بتقديم ميزات ومكونات رئيسية",
-          focus: "مشروعين مستمرين",
+          text: "المساهمة في 4 مشاريع أخرى، بتقديم ميزات ومكونات رئيسية",
+          focus: "4 مشاريع أخرى",
         },
         {
           text: "تنفيذ تحليل ثابت للكود باستخدام SonarQube لتحسين جودة الكود عبر المشاريع.",
