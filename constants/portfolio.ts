@@ -311,7 +311,7 @@ export const CONTACT_INFO = [
   },
   {
     label: "Location",
-    value: "Ashmoun, Egypt",
+    value: "Cairo, Egypt",
     icon: "location_on",
     link: "#",
   },

@@ -56,7 +56,7 @@
   "Footer": {
     "brand_desc": "Architecting digital excellence with precision and purpose. Focused on building the future of the web.",
     "crafted_with_precision": "Crafted with Precision",
-    "location": "Ashmoun, Egypt"
+    "location": "Cairo, Egypt"
   },
   "Projects": {
     "tag": "My Portfolio",
@@ -82,7 +82,7 @@
       "email": "Email",
       "phone": "Phone & WhatsApp",
       "location": "Location",
-      "location_val": "Ashmoun, Egypt"
+      "location_val": "Cairo, Egypt"
     },
     "pwa": {
       "title": "Experience Offline",
