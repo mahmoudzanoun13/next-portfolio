@@ -75,12 +75,59 @@ export const EN_PORTFOLIO_DATA: PortfolioData = {
       image: "/assets/projects/science-toonz.png",
       accent: "tertiary",
     },
+    {
+      title: "Chatting App",
+      description:
+        "A full-stack real-time messaging platform built from scratch. Engineered WebSocket communication with Socket.IO, implemented secure JWT & Google OAuth authentication, and delivered a rich chat experience with typing indicators, online presence, and infinite scroll history.",
+      tags: [
+        "Real-time",
+        "Full-Stack",
+        "WebSockets",
+        "Next.js",
+        "TypeScript",
+        "Socket.IO",
+        "PostgreSQL",
+        "Prisma",
+      ],
+      features: [
+        "Real-time WebSocket Messaging",
+        "JWT & Google OAuth",
+        "Typing Indicators & Unread Badges",
+      ],
+      link: "https://github.com/mahmoudzanoun13/chatting-app",
+      image: "/assets/projects/chatting-app.png",
+      accent: "primary",
+    },
   ],
   experience: [
     {
       type: "experience",
       icon: "work",
-      period: "Present — 2023",
+      period: "Jul 2026 — Present",
+      title: "Frontend Developer",
+      company: "Crazy Dolphin Diving Center",
+      companyLink: "https://www.crazy-dolphin.com",
+      highlights: [
+        {
+          text: "Maintaining and developing features for a production entertainment web platform.",
+          focus: "production entertainment web platform",
+        },
+        {
+          text: "Delivering UI improvements and bug fixes in a live environment.",
+          focus: "UI improvements and bug fixes",
+        },
+        {
+          text: "Working with a legacy jQuery codebase in production.",
+          focus: "legacy jQuery codebase",
+        },
+      ],
+      tech: ["jQuery", "JavaScript", "HTML5", "CSS3"],
+      image: "/assets/experience-visual.png",
+    },
+    {
+      type: "experience",
+      icon: "work",
+      period: "May 2023 — Jun 2026",
       title: "Frontend Developer",
       company: "GenTech",
       companyLink: "https://gen-tech.io",
@@ -110,9 +157,28 @@ export const EN_PORTFOLIO_DATA: PortfolioData = {
       image: "/assets/experience-visual.png",
     },
     {
+      type: "experience",
+      icon: "school",
+      period: "Apr 2023 — May 2023",
+      title: "Frontend Instructor",
+      company: "Creativa Innovation Hub",
+      companyLink: "https://creativa.gov.eg",
+      highlights: [
+        {
+          text: "Taught React.js to beginners from non-CS backgrounds.",
+          focus: "React.js to beginners",
+        },
+        {
+          text: "Led a graduation project from planning to delivery.",
+          focus: "graduation project",
+        },
+      ],
+      tech: ["React", "JavaScript", "HTML5", "CSS3"],
+    },
+    {
       type: "education",
       icon: "school",
-      period: "2021 — 2022",
+      period: "Sep 2021 — Nov 2021",
       title: "Web Development",
       company: "ZTM Academy",
       description:
@@ -133,7 +199,7 @@ export const EN_PORTFOLIO_DATA: PortfolioData = {
     {
       type: "education",
       icon: "history_edu",
-      period: "2020 — 2021",
+      period: "Oct 2020 — Feb 2021",
       title: "Computer Science",
       company: "Harvard University (CS50)",
       description:
@@ -221,12 +287,59 @@ export const AR_PORTFOLIO_DATA: PortfolioData = {
       image: "/assets/projects/science-toonz.png",
       accent: "tertiary",
     },
+    {
+      title: "تطبيق المحادثة",
+      description:
+        "منصة مراسلة فورية متكاملة مبنية من الصفر. هندست التواصل عبر WebSocket باستخدام Socket.IO، ونفذت مصادقة آمنة عبر JWT وGoogle OAuth، وقدمت تجربة دردشة غنية بمؤشرات الكتابة والحضور أونلاين وتاريخ تمرير لانهائي.",
+      tags: [
+        "الوقت الفعلي",
+        "Full-Stack",
+        "WebSockets",
+        "Next.js",
+        "TypeScript",
+        "Socket.IO",
+        "PostgreSQL",
+        "Prisma",
+      ],
+      features: [
+        "مراسلة فورية عبر WebSocket",
+        "JWT وGoogle OAuth",
+        "مؤشرات الكتابة والرسائل غير المقروءة",
+      ],
+      link: "https://github.com/mahmoudzanoun13/chatting-app",
+      image: "/assets/projects/chatting-app.png",
+      accent: "primary",
+    },
   ],
   experience: [
     {
       type: "experience",
       icon: "work",
-      period: "الحاضر — 2023",
+      period: "يوليو 2026 — الحاضر",
+      title: "مطور واجهات أمامية",
+      company: "Crazy Dolphin Diving Center",
+      companyLink: "https://www.crazy-dolphin.com",
+      highlights: [
+        {
+          text: "صيانة وتطوير ميزات لمنصة ترفيهية إنتاجية على الإنترنت.",
+          focus: "منصة ترفيهية إنتاجية",
+        },
+        {
+          text: "تحسينات في واجهة المستخدم وإصلاح الأخطاء في بيئة حية.",
+          focus: "تحسينات في واجهة المستخدم وإصلاح الأخطاء",
+        },
+        {
+          text: "العمل مع قاعدة كود jQuery قديمة في الإنتاج.",
+          focus: "قاعدة كود jQuery قديمة",
+        },
+      ],
+      tech: ["jQuery", "JavaScript", "HTML5", "CSS3"],
+      image: "/assets/experience-visual.png",
+    },
+    {
+      type: "experience",
+      icon: "work",
+      period: "مايو 2023 — يونيو 2026",
       title: "مطور واجهات أمامية",
       company: "GenTech",
       companyLink: "https://gen-tech.io",
@@ -256,9 +369,28 @@ export const AR_PORTFOLIO_DATA: PortfolioData = {
       image: "/assets/experience-visual.png",
     },
     {
+      type: "experience",
+      icon: "school",
+      period: "أبريل 2023 — مايو 2023",
+      title: "مدرب واجهات أمامية",
+      company: "Creativa Innovation Hub",
+      companyLink: "https://creativa.gov.eg",
+      highlights: [
+        {
+          text: "تدريس React.js للمبتدئين من خلفيات غير تقنية.",
+          focus: "React.js للمبتدئين",
+        },
+        {
+          text: "قيادة مشروع التخرج من التخطيط حتى التسليم.",
+          focus: "مشروع التخرج",
+        },
+      ],
+      tech: ["React", "JavaScript", "HTML5", "CSS3"],
+    },
+    {
       type: "education",
       icon: "school",
-      period: "2021 — 2022",
+      period: "سبتمبر 2021 — نوفمبر 2021",
       title: "تطوير الويب",
       company: "أكاديمية ZTM",
       description:
@@ -279,7 +411,7 @@ export const AR_PORTFOLIO_DATA: PortfolioData = {
     {
       type: "education",
       icon: "history_edu",
-      period: "2020 — 2021",
+      period: "أكتوبر 2020 — فبراير 2021",
       title: "علوم الحاسب",
       company: "جامعة هارفارد (CS50)",
       description:
