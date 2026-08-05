@@ -18,22 +18,23 @@ jobs:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
 
-      - name: ⚡ Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: ⚡ Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: 22
+          cache: npm
 
       - name: 📦 Install Dependencies
-        run: bun install --frozen-lockfile
+        run: npm ci
 
       - name: 🔍 Lint Check
-        run: bun run lint
+        run: npm run lint
 
       - name: 🏗️ Type Check
-        run: bun run type-check
+        run: npm run type-check
 
       - name: 🚀 Production Build
-        run: bun run build
+        run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: ${{ github.event.pull_request.head.repo.html_url || 'https://portfolio-mahmoud-zanoun.vercel.app' }}
           NODE_ENV: production

@@ -41,13 +41,15 @@ This portfolio is a fully functional, production-ready PWA, designed for a nativ
 - **Internationalization:** `next-intl` (Edge Proxy Architecture)
 - **Form Handling:** EmailJS + Functional React Hooks
 - **PWA Management:** Native Manifest Generator + Custom Service Worker
-- **Package Manager & Runtime:** `bun`
+- **Package Manager:** Bun
+- **Deployment Platform:** Vercel
+- **Production Runtime:** Node.js
 
 ---
 
 ## 🛠️ Getting Started
 
-This repository relies exclusively on the **Bun runtime**.
+This repository uses Bun as the local development package manager.
 
 1. **Install dependencies:**
 
