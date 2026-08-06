@@ -50,4 +50,15 @@ export type PortfolioData = {
   projects: Project[];
   experience: TimelineItem[];
   stats: Array<{ label: string; value: string }>;
+  recommendations: Recommendation[];
+};
+
+export type Recommendation = {
+  id: string;
+  name: string;
+  role: string;
+  relationship: string;
+  relationshipType: "mentorship" | "collaboration" | "leadership" | "client";
+  text: string;
+  avatarInitials: string;
 };
