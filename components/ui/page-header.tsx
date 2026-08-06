@@ -7,6 +7,7 @@ type PageHeaderProps = Omit<React.HTMLAttributes<HTMLElement>, "title"> & {
   title: React.ReactNode;
   subtitle?: React.ReactNode;
   alignment?: "start" | "center";
+  as?: "h1" | "h2" | "h3";
 };
 
 export function PageHeader({
@@ -15,6 +16,7 @@ export function PageHeader({
   title,
   subtitle,
   alignment = "start",
+  as: Heading = "h1",
   ...props
 }: PageHeaderProps) {
   return (
@@ -40,9 +42,9 @@ export function PageHeader({
           </span>
         </Badge>
       )}
-      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-headline font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary leading-[1.1] wrap-break-word overflow-wrap-normal max-w-full">
+      <Heading className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-headline font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary leading-[1.1] wrap-break-word overflow-wrap-normal max-w-full">
         {title}
-      </h1>
+      </Heading>
       {subtitle && (
         <p
           className={cn(
