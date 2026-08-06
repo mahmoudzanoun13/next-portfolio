@@ -1,9 +1,18 @@
 import Hero from "@/components/home/hero";
 import { Section } from "@/components/ui/section";
 import { getTranslations } from "next-intl/server";
+import Recommendations from "@/components/home/recommendations";
+import { getPortfolioData } from "@/constants/portfolio";
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const isRtl = locale === "ar";
   const t = await getTranslations("Stats");
+  const data = getPortfolioData(locale);
 
   const stats = [
     { label: t("years_experience"), value: "3+" },
@@ -45,6 +54,9 @@ export default async function Home() {
           ))}
         </div>
       </Section>
+      
+      {/* Recommendations Section */}
+      <Recommendations recommendations={data.recommendations} isRtl={isRtl} />
     </main>
   );
 }
