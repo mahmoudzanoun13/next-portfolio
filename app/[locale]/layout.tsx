@@ -78,12 +78,15 @@ export default async function RootLayout({
       </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${cairo.variable} antialiased bg-[#0f072e] text-on-surface selection:bg-primary/30 selection:text-white overflow-x-hidden min-h-screen flex flex-col ${isRtl ? "font-cairo" : ""}`}
+        style={{ isolation: "isolate" }}
       >
         <PwaRegistry />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <div className="flex-1 flex flex-col pt-24 lg:pt-32">{children}</div>
-          <Footer />
+          <div className="relative z-0">
+            <Footer />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
