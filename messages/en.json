@@ -52,6 +52,20 @@
     "core_technologies": "Core Technologies",
     "install_web_app": "Install as Web App",
     "install_desc": "Enjoy a seamless offline experience",
+    "skills": {
+      "tag": "TECH ECOSYSTEM",
+      "title": "The stack behind the systems I build.",
+      "subtitle": "A focused frontend ecosystem used across production applications, open-source tools, performance work, and technical mentoring.",
+      "default_header": "Hover to explore stack",
+      "categories": {
+        "core_languages": "Core Languages",
+        "frameworks_&_ui": "Frameworks & Libraries",
+        "backend_&_db": "Backend & Databases",
+        "tooling_&_api": "Tools & APIs",
+        "testing": "Testing",
+        "management_&_agile": "Management & Agile"
+      }
+    },
     "recommendations": {
       "tag": "Recommendations",
       "title": "LinkedIn recommendations from engineers, teammates, mentees, and collaborators.",
