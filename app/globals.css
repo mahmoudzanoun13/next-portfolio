@@ -73,6 +73,16 @@
   to { transform: scaleX(1); }
 }
 
+@keyframes marquee-up {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes marquee-down {
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
 @layer base {
   :root {
     --background: #0f072e;

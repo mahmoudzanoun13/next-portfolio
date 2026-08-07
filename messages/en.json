@@ -63,7 +63,9 @@
       "profile_box_title": "LinkedIn Recommendations",
       "profile_box_desc": "Social proof around engineering ownership, collaboration, mentoring, and delivery.",
       "view_profile_btn": "View LinkedIn Profile",
-      "contact_me_btn": "Contact Me"
+      "contact_me_btn": "Contact Me",
+      "carousel_title": "Verified on LinkedIn",
+      "carousel_hint": "Hover to pause"
     }
   },
   "Footer": {

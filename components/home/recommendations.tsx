@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { RecommendationCard } from "./recommendations/recommendation-card";
 import { RecommendationsCallout } from "./recommendations/recommendations-callout";
+import { RecommendationsCarousel } from "./recommendations/recommendations-carousel";
 import { Recommendation } from "@/types/portfolio";
 import { Section } from "@/components/ui/section";
 import { PageHeader } from "@/components/ui/page-header";
@@ -81,6 +82,9 @@ export default function Recommendations({
           </div>
         )}
       </div>
+
+      {/* LinkedIn Screenshot Verification Carousel */}
+      <RecommendationsCarousel />
     </Section>
   );
 }

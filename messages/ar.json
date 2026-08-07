@@ -63,7 +63,9 @@
       "profile_box_title": "توصيات LinkedIn",
       "profile_box_desc": "إثباتات واجتماعيات مهنية حول الملكية الهندسية، التعاون، التوجيه، والتسليم.",
       "view_profile_btn": "عرض ملف LinkedIn الشخصي",
-      "contact_me_btn": "تواصل معي"
+      "contact_me_btn": "تواصل معي",
+      "carousel_title": "موثق على LinkedIn",
+      "carousel_hint": "مرر المؤشر للإيقاف"
     }
   },
   "Footer": {
