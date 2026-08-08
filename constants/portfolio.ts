@@ -5,7 +5,7 @@ export const EN_PORTFOLIO_DATA: PortfolioData = {
     { label: "Years Experience", value: "3+" },
     { label: "Projects Delivered", value: "8+" },
     { label: "Code Accuracy", value: "95%" },
-    { label: "Tech Stack Tools", value: "15+" },
+    { label: "Tech Stack Tools", value: "37+" },
   ],
   projects: [
     {
@@ -345,7 +345,7 @@ export const AR_PORTFOLIO_DATA: PortfolioData = {
     { label: "سنوات الخبرة", value: "+3" },
     { label: "مشاريع منجزة", value: "+8" },
     { label: "دقة الكود", value: "95%" },
-    { label: "أدوات تقنية", value: "+15" },
+    { label: "أدوات تقنية", value: "+37" },
   ],
   projects: [
     {

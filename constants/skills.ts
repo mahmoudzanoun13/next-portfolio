@@ -29,6 +29,7 @@ export const SKILLS_DATA: Skill[] = [
   { name: "RTK Query", category: "Frameworks & UI" },
   { name: "Zustand", category: "Frameworks & UI" },
   { name: "Tanstack Query", category: "Frameworks & UI" },
+  { name: "Nuqs", category: "Frameworks & UI" },
   { name: "React Hook Form", category: "Frameworks & UI" },
   { name: "Zod", category: "Frameworks & UI" },
   { name: "Framer Motion", category: "Frameworks & UI" },

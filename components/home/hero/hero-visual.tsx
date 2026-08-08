@@ -8,7 +8,7 @@ export async function HeroVisual() {
 
   return (
     <div className="lg:col-span-12 xl:col-span-5 relative" aria-hidden="true">
-      <div className="relative w-full aspect-square max-w-[500px] mx-auto">
+      <div className="relative w-full aspect-square max-w-125 mx-auto">
         {/* Abstract Tech Visual */}
         <div className="absolute inset-0 bg-linear-to-tr from-primary/20 to-secondary/20 rounded-3xl rotate-6 animate-pulse"></div>
 

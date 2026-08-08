@@ -37,12 +37,6 @@
     "title_experience": "Experience",
     "title_contact": "Contact"
   },
-  "Stats": {
-    "years_experience": "Years Experience",
-    "projects_delivered": "Projects Delivered",
-    "code_accuracy": "Code Accuracy",
-    "tech_stack_tools": "Tech Stack Tools"
-  },
   "Hero": {
     "badge": "Available for Innovation",
     "title": "Architecting <highlight>Digital Excellence</highlight> as a Senior Frontend Developer",

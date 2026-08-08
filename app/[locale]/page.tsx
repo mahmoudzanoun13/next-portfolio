@@ -1,6 +1,5 @@
 import Hero from "@/components/home/hero";
 import { Section } from "@/components/ui/section";
-import { getTranslations } from "next-intl/server";
 import Recommendations from "@/components/home/recommendations";
 import { TechEcosystem } from "@/components/home/tech-ecosystem";
 import { getPortfolioData } from "@/constants/portfolio";
@@ -12,15 +11,9 @@ export default async function Home({
 }) {
   const { locale } = await params;
   const isRtl = locale === "ar";
-  const t = await getTranslations("Stats");
   const data = getPortfolioData(locale);
 
-  const stats = [
-    { label: t("years_experience"), value: "3+" },
-    { label: t("projects_delivered"), value: "8+" },
-    { label: t("code_accuracy"), value: "95%" },
-    { label: t("tech_stack_tools"), value: "15+" },
-  ];
+  const stats = data.stats;
 
   return (
     <main className="relative min-h-screen tech-grid overflow-x-hidden">

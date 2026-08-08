@@ -63,15 +63,15 @@ export function TechEcosystem() {
             }}
           >
             {(() => {
-              // We have 57 skills. To create a scattered look, we'll place them into a larger grid
+              // We have 58 skills. To create a scattered look, we'll place them into a larger grid
               // by injecting nulls at specific logical positions.
               const gridItems = [];
               let skillIndex = 0;
               
-              // Let's create an 8x9 grid (72 cells). 57 skills + 15 empty cells = 72 cells. 
+              // Let's create an 8x9 grid (72 cells). 58 skills + 14 empty cells = 72 cells. 
               // We pick strategic empty indices to scatter them organically.
               const emptyIndices = new Set([
-                0, 5, 8, 13, 19, 27, 34, 42, 45, 53, 61, 62, 68, 70, 71
+                0, 5, 8, 13, 19, 27, 42, 45, 53, 61, 62, 68, 70, 71
               ]);
 
               for (let i = 0; i < 72; i++) {
